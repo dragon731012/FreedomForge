@@ -1,0 +1,155 @@
+<script src="uv/uv.bundle.js"></script>
+<script src="uv/uv.config.js"></script>
+
+<script>
+    function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); } 
+    function blank(){
+      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe); var script = win.document.createElement("script"); script.src = "https://3kh0.github.io/js/main.js"; win.document.body.appendChild(script); })();
+    }
+</script>
+<title>DM Unbl0cker</title>
+<link rel="icon" href="/img/logo.png">
+<img src="/img/IMG_2996.gif" class="bg"/>
+<div class="title">
+    <h1 id="title1">DM Unblocker</h1>
+</div>
+<form class="searchbox" id="searchbox">
+    <input class="search" id="search" placeholder='Search Google or Type a URL' type='text'/>
+</form>
+<div class="icons">
+    <a onclick="blank();">
+    <img src="/img/IMG_3024.png" class="blank" id="blank"/>
+    </a>
+    <a href="https://github.com/dragon731012">
+    <img src="/img/github.png" class="github" id="github"/>
+    </a>
+    <a href="https://discord.gg/hrXXUeWgrn">
+    <img src="/img/discord.png" class="discord" id="discord"/>
+    </a>
+</div>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+    .bg{
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    width:100%;
+    height:100%;
+    }
+    .searchbox{
+    width:80%;
+    height:6%;
+    color: #FFFFFF;
+    position: absolute;
+    left:10%;
+    top:45%;
+    }
+    .search{
+    text-align: center;
+    background: transparent;
+    border-radius: 25px;
+    border-radius: 25px;
+    border: 4px solid #FFFFFF;
+    color: #FFFFFF;
+    width:100%;
+    height:100%;
+    }
+    .title{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top:15%;
+    float: center;
+    align: center;
+    text-align: center;
+    color: #FFFFFF;
+    }
+    ::placeholder {
+    margin: auto;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    }
+    .icons{
+    align: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0%;
+    left: 0%;
+    }
+    .github{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    left:0%;
+    }
+    .blank{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    right:0%;
+    }
+    .discord{
+    position: absolute;
+    height:100%;
+    width:70px;
+    height:70px;
+    left:70px;
+    }
+    .discord:hover{
+    opacity:0.5;
+    }
+    .github:hover{
+    opacity:0.5;
+    }
+</style>
+<script>
+    var iconcookie=get_cookie("icon");
+    var proxy=localStorage.getItem("proxy");
+    if (proxy==undefined){
+      proxy="Corrosion";
+    }
+    var fontsize1=2560/screen.width*18;
+    var fontsize2=2560/screen.width*6;
+    
+    title1.style.fontSize = fontsize1+"px";
+    search.style.fontSize = fontsize2+"px";
+    if (iconcookie=null){
+        iconcookie="/img/logo.png";
+    }
+    const favicon=document.querySelector('[rel=icon]');
+    (function() {
+        var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+        link.type='image/x-icon';
+        link.rel='shortcut icon';
+        link.href=url;
+        document.getElementsByTagName('head')[0].appendChild(link);
+    })();
+</script>
+<script>
+    const form = document.querySelector('form');
+    const input = document.querySelector('input');
+
+    form.addEventListener('submit', async event => {
+        event.preventDefault();
+        window.navigator.serviceWorker.register('./sw.js', {
+            scope: __uv$config.prefix
+        }).then(() => {
+            let url = input.value.trim();
+            if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+            else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+
+
+            window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+        });
+    });
+
+    function isUrl(val = ''){
+        if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+        return false;
+    };
+</script>
