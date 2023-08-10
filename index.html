@@ -1,10 +1,14 @@
 <input id="input" type="file">
 <script>
-  var inp = document.getElementById('input');
-    inp.addEventListener("submit"){
-    for (var i = 0; i < inp.files.length; ++i) {
-      var name = inp.files.item(i).name;
-      alert("file name: " + name);
+  var done=false;
+  while (input.value!=undefined && input.value!="" && input.value!=null && done!=true){
+    var inp = document.getElementById('input');
+      inp.addEventListener("submit"){
+      for (var i = 0; i < inp.files.length; ++i) {
+        var name = inp.files.item(i).name;
+        alert("file name: " + name);
+      }
     }
+    done=true;
   }
 </script>
