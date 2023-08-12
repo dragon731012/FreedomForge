@@ -1,4 +1,5 @@
 <input id="input" type="file">
+<script src='zip.js'></script>
 <button id="button">download</button>
 <textarea id="text">
 testing
@@ -30,6 +31,7 @@ testing
   document.getElementById("button").addEventListener("click", function() {
     var t = document.getElementById("text").value;
     var f = "test.txt";
+    var z=new Zip('UnblockCustom');
     download(f, t);
   }, false);
 </script>
