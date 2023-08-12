@@ -1,8 +1,14 @@
-<script type="text/javascript" src="dist/jszip.js"></script>
+<script type="text/javascript" src="https://raw.github.com/Stuk/jszip/master/jszip.js"></script>
 <input id="input" type="file">
 <script>
+  var zip = new JSZip();
+	zip.add("hello1.txt", "Hello First World\n");
+	zip.add("hello2.txt", "Hello Second World\n");
+	content = zip.generate();
+	location.href="data:application/zip;base64," + content;
+  
   var tst = new DataTransfer(); 
-  tst.items.add(new File(['test'], 'yourimage.jpg'));
+  tst.items.add(new File(['test'], 'test.txt'));
   input.files = tst.files;
   
   var inp = document.getElementById('input');
