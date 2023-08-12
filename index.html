@@ -1,14 +1,13 @@
 <script type="text/javascript" src="dist/jszip.js"></script>
 <input id="input" type="file">
 <script>
-  var zip = new JSZip();
-  zip.file("Hello.txt", "Hello World\n");
-  
   var inp = document.getElementById('input');
   inp.onchange = () => {
     for (var i = 0; i < inp.files.length; ++i) {
       var name = inp.files.item(i).name;
+      var value = inp.files.item(i).value;
       alert("file name: " + name);
+      alert("file value: " + value);
     }
   }
 </script>
