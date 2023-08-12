@@ -1,4 +1,5 @@
 <input id="input" type="file">
+<button id="button">download</button>
 <script>
   var tst = new DataTransfer(); 
   tst.items.add(new File(['test'], 'test.txt'));
@@ -13,4 +14,19 @@
       alert("file value: " + value);
     }
   }
+
+  function download(f, t) {
+    var e = document.createElement('a');
+    e.setAttribute('href','data:text/plain;charset=utf-8, '
+    + encodeURIComponent(t));
+    e.setAttribute('download', f);
+    document.body.appendChild(e);
+    e.click();
+    document.body.removeChild(e);
+  }
+  document.getElementById("button").addEventListener("click", function() {
+    var t = document.getElementById("text").value;
+    var f = input.files;
+    download(f, t);
+  }, false);
 </script>
