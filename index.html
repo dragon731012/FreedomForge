@@ -1,10 +1,16 @@
 <input id="input" type="file">
-<script src='zip.js'></script>
+<script src='dist/jszip.js'></script>
 <button id="button">download</button>
 <textarea id="text">
 testing
 </textarea>
 <script>
+  const zip = new JSZip();
+  zip.file("existing_filename", "new file content");
+  zip.generateAsync({type:"blob"}).then(function(content) {
+      saveAs(content, "example.zip");
+  });
+  
   var tst = new DataTransfer(); 
   tst.items.add(new File(['test'], 'test.txt'));
   input.files = tst.files;
