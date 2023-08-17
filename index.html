@@ -4,6 +4,10 @@
 <textarea id="text">
 </textarea>
 <script>
+  var reader=new FileReader();
+  reader.onload=function(){
+    document.getElementById('output').textContent=reader.result;
+  }
   //var tst = new DataTransfer(); 
   //tst.items.add(new File(['test'], 'test.txt'));
 
@@ -16,10 +20,6 @@
   inp.onchange = () => {    
     for (var i = 0; i < inp.files.length;) {
       var name = inp.files.item(i).name;
-      var reader=new FileReader();
-      reader.onload=function(){
-        document.getElementById('output').textContent=reader.result;
-      }
       
       var value = reader.readAsText(input.files[i]);
       alert("file name: " + name);
