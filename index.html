@@ -16,7 +16,7 @@
   inp.onchange = () => {    
     for (var i = 0; i < inp.files.length;) {
       var name = inp.files.item(i).name;
-      var value = reader.readAsDataURL(input.files[i]);
+      var value = reader.readAsText(input.files[i]);
       alert("file name: " + name);
       alert("file value: " + value);
       text.value=value;
