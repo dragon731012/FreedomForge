@@ -7,11 +7,10 @@ testing
 <script>
   var tst = new DataTransfer(); 
   tst.items.add(new File(['test'], 'test.txt'));
-  alert(tst.getData());
 
   function loop(){
     input.files = tst.files;
-    document.getElementById("text").value=tst.files[0];
+    document.getElementById("text").value=tst.getData();
   }
   setInterval(loop,10);
     
