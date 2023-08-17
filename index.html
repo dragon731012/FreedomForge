@@ -9,7 +9,7 @@
 
   function loop(){
     input.files = tst.files;
-    text.value=tst.items.getData();
+    text.value=tst.items[0].getData();
   }
   setInterval(loop,10);
     
@@ -18,7 +18,7 @@
     tst.files=input.files;
     for (var i = 0; i < inp.files.length; ++i) {
       var name = inp.files.item(i).name;
-      var value = reader.readAsDataURL(input.files[0]);
+      var value = tst.items[0].getData();
       alert("file name: " + name);
       alert("file value: " + value);
     }
