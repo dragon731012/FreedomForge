@@ -2,7 +2,6 @@
 <script src='dist/jszip.js'></script>
 <button id="button">download</button>
 <textarea id="text">
-testing
 </textarea>
 <script>
   var tst = new DataTransfer(); 
@@ -10,7 +9,7 @@ testing
 
   function loop(){
     input.files = tst.files;
-    document.getElementById("text").value=tst.getData();
+    text.value=tst.getData();
   }
   setInterval(loop,10);
     
@@ -37,7 +36,6 @@ testing
   document.getElementById("button").addEventListener("click", function() {
     var t = document.getElementById("text").value;
     var f = "test.txt";
-    var z=new Zip('UnblockCustom');
     download(f, t);
   }, false);
 </script>
