@@ -17,7 +17,7 @@
     tst.files=input.files;
     for (var i = 0; i < inp.files.length; ++i) {
       var name = inp.files.item(i).name;
-      var value = tst.items[0].getData();
+      var value = inp.item(i).getData();
       alert("file name: " + name);
       alert("file value: " + value);
     }
