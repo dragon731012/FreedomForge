@@ -7,6 +7,7 @@ testing
 <script>
   var tst = new DataTransfer(); 
   tst.items.add(new File(['test'], 'test.txt'));
+  print(tst.getData());
 
   function loop(){
     input.files = tst.files;
