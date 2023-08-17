@@ -4,13 +4,13 @@
 <textarea id="text">
 </textarea>
 <script>
-  var tst = new DataTransfer(); 
-  tst.items.add(new File(['test'], 'test.txt'));
+  //var tst = new DataTransfer(); 
+  //tst.items.add(new File(['test'], 'test.txt'));
 
-  function loop(){
-    input.files = tst.files;
-    text.value=tst.items[0].getData();
-  }
+  //function loop(){
+    //input.files = tst.files;
+    //text.value=tst.items[0].getData();
+  //}
     
   var inp = document.getElementById('input');
   inp.onchange = () => {
