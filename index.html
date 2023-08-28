@@ -4,6 +4,19 @@
 <textarea id="text">
 </textarea>
 <script>
+  onClickDownload: function () {
+    var zip = new JSZip();
+    for (var i = 0; i < 5; i++) {
+        var txt = 'hello';
+        zip.file("file" + i + ".txt", txt);
+    }
+    zip.generateAsync({
+        type: "base64"
+    }).then(function(content) {
+        window.location.href = "data:application/zip;base64," + content;
+    });       
+`}
+  
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
