@@ -6,10 +6,10 @@
 <script>
   fetch("files/index.html")
     .then((response) => {
-      return response.json();
+      return encodeURIComponent(response).json();
     })
     .then((data) => {
-      alert(encodeURIComponent(data));
+      alert(data);
     })
     .catch(function(error) {
       alert(error);
