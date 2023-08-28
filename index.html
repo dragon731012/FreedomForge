@@ -8,12 +8,12 @@
 <script>
   function onClickDownload(indexsrc) {
     var zip = new JSZip();
+    
     var txt = 'hello';
     zip.file("/scripts/index.js", indexjs.value);
 
-    var zip2 = new JSZip();
     var txt = 'hello';
-    zip2.file("/uv/uv.bundle.js", uvbundlejs.value);
+    zip.file("/uv/uv.bundle.js", uvbundlejs.value);
     
     zip.generateAsync({
         type: "base64"
