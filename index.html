@@ -6,8 +6,7 @@
 <script>
   fetch("files/index.html")
     .then((response) => {
-      response=encodeURIComponent(response);
-      return response.json();
+      return encodeURIComponent(response.json());
     })
     .then((data) => {
       alert(data);
