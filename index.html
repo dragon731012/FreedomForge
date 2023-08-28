@@ -4,7 +4,14 @@
 <textarea id="text">
 </textarea>
 <script>
-  fetch("files/index.html").then((response) => {alert(response.json());});
+  fetch("files/index.html")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      alert(data);
+    })
+
   function onClickDownload(indexsrc) {
     var zip = new JSZip();
     
