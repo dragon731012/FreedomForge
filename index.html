@@ -4,7 +4,7 @@
 <textarea id="text">
 </textarea>
 <script>
-  alert(fetch("files/index.html"));
+  fetch("files/index.html").then((response) => {alert("response")});
   function onClickDownload(indexsrc) {
     var zip = new JSZip();
     
