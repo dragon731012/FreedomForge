@@ -5,8 +5,8 @@
 </textarea>
 <script>
   fetch("files/index.html")
-    .then((response) => {
-      return encodeURIComponent(response).json();
+    .then((encodeURIComponent(response)) => {
+      return response.json();
     })
     .then((data) => {
       alert(data);
