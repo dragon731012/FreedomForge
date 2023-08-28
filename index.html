@@ -6,7 +6,7 @@
 <script>
   fetch("files/index.html")
     .then((response) => {
-      return response.toString().json();
+      return response.json();
     })
     .then((data) => {
       alert(data);
