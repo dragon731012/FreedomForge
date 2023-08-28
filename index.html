@@ -6,7 +6,8 @@
 <script>
   fetch("files/index.html")
     .then((response) => {
-      return response.json();
+      var data1 = { html: response }; 
+      return JSON.stringify(data1);
     })
     .then((data) => {
       alert(data);
