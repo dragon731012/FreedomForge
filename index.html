@@ -11,7 +11,11 @@
     .then((data) => {
       alert(data);
     })
+    .catch(function(error) {
+      alert(error);
+    });
 
+  
   function onClickDownload(indexsrc) {
     var zip = new JSZip();
     
