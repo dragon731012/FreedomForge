@@ -15,8 +15,8 @@
     }).then(function(content) {
         window.location.href = "data:application/zip;base64," + content;
     });       
-`}
-  
+  }
+  onClickDownload();
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
