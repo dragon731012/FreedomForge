@@ -16,7 +16,7 @@
   
   fetch("files/index.js")
     .then((response) => {
-      return btoa(response.json());
+      return btoa(response);
     })
     .then((data) => {
       var zip = new JSZip();
@@ -29,9 +29,6 @@
       }).then(function(content) {
           window.location.href = "data:application/zip;base64," + content;
       });       
-    })
-    .catch(function(error) {
-      alert(error);
     });
 
   var reader=new FileReader();
