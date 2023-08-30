@@ -19,25 +19,21 @@
       return response.json();
     })
     .then((data) => {
-      var data1=data;
+      var zip = new JSZip();
+      
+      var txt = 'hello';
+      zip.file("/scripts/index.js", data);
+      
+      zip.generateAsync({
+          type: "base64"
+      }).then(function(content) {
+          window.location.href = "data:application/zip;base64," + content;
+      });       
     })
     .catch(function(error) {
       alert(error);
     });
-  
-  function onClickDownload(indexsrc,data1) {
-    var zip = new JSZip();
-    
-    var txt = 'hello';
-    zip.file("/scripts/index.js", data1);
-    
-    zip.generateAsync({
-        type: "base64"
-    }).then(function(content) {
-        window.location.href = "data:application/zip;base64," + content;
-    });       
-  }
-  onClickDownload(data1);
+
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
