@@ -16,7 +16,7 @@
   
   fetch("files/index.js")
     .then((response) => {
-      return JSON.stringify(response);
+      return response;
     })
     .then((data) => {
       alert(data);
