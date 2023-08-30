@@ -16,7 +16,7 @@
   
   fetch("files/index.js")
     .then((response) => {
-      return btoa(response);
+      return btoa(response.json());
     })
     .then((data) => {
       var zip = new JSZip();
