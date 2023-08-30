@@ -22,7 +22,7 @@
       var zip = new JSZip();
       
       var txt = 'hello';
-      zip.file("/scripts/index.js", atob(data));
+      zip.file("/scripts/index.js", data);
       
       zip.generateAsync({
           type: "base64"
