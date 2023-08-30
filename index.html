@@ -4,25 +4,16 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  var jsZip = new JSZip(); 
-  jsZip.loadAsync("files/main.zip").then(function (zip) {
-    Object.keys(zip.files).forEach(function (filename) {
-      zip.files[filename].async('string').then(function (fileData) {
-        alert(fileData);   
-      });
+  fetch("files/main.zip")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      alert(data);
+    })
+    .catch(function(error) {
+      alert(error);
     });
-  });
-  
-  //fetch("files/index.html")
-    //.then((response) => {
-      //return response.json();
-    //})
-    //.then((data) => {
-      //alert(data);
-    //})
-    //.catch(function(error) {
-      //alert(error);
-    //});
   
   //function onClickDownload(indexsrc) {
     //var zip = new JSZip();
