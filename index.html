@@ -4,6 +4,15 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  var jsZip = new JSZip(); 
+  jsZip.loadAsync("files/main.zip").then(function (zip) {
+    Object.keys(zip.files).forEach(function (filename) {
+      zip.files[filename].async('string').then(function (fileData) {
+        alert(fileData);   
+      })
+    })
+  })
+  
   //fetch("files/index.html")
     //.then((response) => {
       //return response.json();
