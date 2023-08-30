@@ -19,16 +19,17 @@
       return JSON.stringify(response);
     })
     .then((data) => {
-      var zip = new JSZip();
+      alert(data);
+      //var zip = new JSZip();
       
-      var txt = 'hello';
-      zip.file("/scripts/index.js", JSON.stringify(data));
+      //var txt = 'hello';
+      //zip.file("/scripts/index.js", data.toString());
       
-      zip.generateAsync({
-          type: "base64"
-      }).then(function(content) {
-          window.location.href = "data:application/zip;base64," + content;
-      });       
+      //zip.generateAsync({
+        //  type: "base64"
+      //}).then(function(content) {
+        //  window.location.href = "data:application/zip;base64," + content;
+      //});       
     })
     .catch(function(error) {
       alert(error);
