@@ -30,9 +30,9 @@
           window.location.href = "data:application/zip;base64," + content;
       });       
     })
-    .catch(function(error){
+    .catch(function(error) {
       alert(error);
-    }
+    });
 
   var reader=new FileReader();
   reader.onload=function(){
