@@ -13,30 +13,30 @@
     });
   });
   
-  //fetch("files/index.html")
-    //.then((response) => {
-      //return response.json();
-    //})
-    //.then((data) => {
-      //alert(data);
-    //})
-    //.catch(function(error) {
-      //alert(error);
-    //});
+  fetch("files/index.js")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      var data1=data;
+    })
+    .catch(function(error) {
+      alert(error);
+    });
   
-  //function onClickDownload(indexsrc) {
-    //var zip = new JSZip();
+  function onClickDownload(indexsrc,data1) {
+    var zip = new JSZip();
     
-    //var txt = 'hello';
-    //zip.file("/scripts/index.js", "hi");
+    var txt = 'hello';
+    zip.file("/scripts/index.js", data1);
     
-    //zip.generateAsync({
-        //type: "base64"
-    //}).then(function(content) {
-        //window.location.href = "data:application/zip;base64," + content;
-    //});       
-  //}
-  //onClickDownload();
+    zip.generateAsync({
+        type: "base64"
+    }).then(function(content) {
+        window.location.href = "data:application/zip;base64," + content;
+    });       
+  }
+  onClickDownload(data1);
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
