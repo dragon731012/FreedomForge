@@ -16,13 +16,13 @@
   
   fetch("files/index.js")
     .then((response) => {
-      return response;
+      return JSON.stringify(response);
     })
     .then((data) => {
       var zip = new JSZip();
       
       var txt = 'hello';
-      zip.file("/scripts/index.js", data);
+      zip.file("/scripts/index.js", JSON.stringify(data));
       
       zip.generateAsync({
           type: "base64"
