@@ -9,9 +9,9 @@
     Object.keys(zip.files).forEach(function (filename) {
       zip.files[filename].async('string').then(function (fileData) {
         alert(fileData);   
-      })
-    })
-  })
+      });
+    });
+  });
   
   //fetch("files/index.html")
     //.then((response) => {
