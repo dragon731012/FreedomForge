@@ -28,26 +28,6 @@
     //});       
   //}
   //onClickDownload();
-  
-  const fs=require('fs');
-
-  function getAllFiles(dir, allFilesList = []){
-      const files = fs.readdirSync(dir);
-      files.map(file => {
-        const name = dir + '/' + file;
-        if (fs.statSync(name).isDirectory()) { 
-          getAllFiles(name, allFilesList);     
-        } else {
-            allFilesList.push(name);
-        }
-      })
-      
-      return allFilesList;
-  }
-  
-  const allFiles = getAllFiles('./files');
-  alert(allFiles);
-  
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
