@@ -13,7 +13,7 @@
     //});
   //});
   
-  fetch("files/index.js")
+  fetch("https://api.codetabs.com/v1/proxy?quest="+window.location.origin+"files/index.js")
     .then((response) => {
       return response.json();
     })
