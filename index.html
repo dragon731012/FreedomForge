@@ -4,6 +4,41 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  function stringToJson(input) {
+    var result = [];
+  
+    // Replace leading and trailing [], if present
+    input = input.replace(/^\[/, '');
+    input = input.replace(/\]$/, '');
+  
+    // Change the delimiter to
+    input = input.replace(/},{/g, '};;;{');
+  
+    // Preserve newlines, etc. - use valid JSON
+    //https://stackoverflow.com/questions/14432165/uncaught-syntaxerror-unexpected-token-with-json-parse
+    input = input.replace(/\\n/g, "\\n")
+                 .replace(/\\'/g, "\\'")
+                 .replace(/\\"/g, '\\"')
+                 .replace(/\\&/g, "\\&")
+                 .replace(/\\r/g, "\\r")
+                 .replace(/\\t/g, "\\t")
+                 .replace(/\\b/g, "\\b")
+                 .replace(/\\f/g, "\\f");
+  
+    // Remove non-printable and other non-valid JSON characters
+    input = input.replace(/[\u0000-\u0019]+/g, "");
+  
+    input = input.split(';;;');
+  
+    input.forEach(function(element) {
+      //console.log(JSON.stringify(element));
+  
+      result.push(JSON.parse(element));
+    }, this);
+  
+    return result;
+  }
+  
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
@@ -15,8 +50,7 @@
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then((response) => {
-      var r=response.json();
-      return r;
+      return stringToJson(response);
     })
     .then((data) => {
       alert(data);
