@@ -16,7 +16,10 @@
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then((response) => {
       var r=response.json();
-      var s = r.replace(/\\n/g, "\\n")
+      return r;
+    })
+    .then((data) => {
+      var s = data.replace(/\\n/g, "\\n")
           .replace(/\\'/g, "\\'")
           .replace(/\\"/g, '\\"')
           .replace(/\\&/g, "\\&")
@@ -25,11 +28,7 @@
           .replace(/\\b/g, "\\b")
           .replace(/\\f/g, "\\f");
       s = s.replace(/[\u0000-\u0019]+/g,"");
-      var o = JSON.parse(s);
-      return o;
-    })
-    .then((data) => {
-      alert(data);
+      alert(s);
       //var zip = new JSZip();
       
       //var txt = 'hello';
