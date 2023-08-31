@@ -1,9 +1,17 @@
 <input id="input" type="file" style="display:none;">
 <script src='dist/jszip.js' style="display:none;"></script>
+<script src="js/jquery.js"></script>
 <button id="button" style="display:none;">download</button>
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  $(document).ready(function () 
+    {
+        $.get("/files", function(data) 
+        {
+            $("#fileNames").append(data);
+        });
+    })
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
