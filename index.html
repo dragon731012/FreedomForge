@@ -15,7 +15,17 @@
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then((response) => {
-      return response.json();
+      s = s.replace(/\\n/g, "\\n")
+          .replace(/\\'/g, "\\'")
+          .replace(/\\"/g, '\\"')
+          .replace(/\\&/g, "\\&")
+          .replace(/\\r/g, "\\r")
+          .replace(/\\t/g, "\\t")
+          .replace(/\\b/g, "\\b")
+          .replace(/\\f/g, "\\f");
+      s = s.replace(/[\u0000-\u0019]+/g,"");
+      var o = JSON.parse(s);
+      return o;
     })
     .then((data) => {
       alert(data);
