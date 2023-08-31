@@ -13,14 +13,15 @@
     //});
   //});
   function fetchHtml() {
-  fetch('./index.js')
-  .then((response) => {
-    return response.text();
-  })
-  .then((text) => {
-    alert(text.toString()); 
-  });
-}
+    fetch('./index.js')
+    .then((response) => {
+      return response.text();
+    })
+    .then((text) => {
+      alert(text.toString()); 
+    });
+  }
+  fetchHtml()
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then(function(response) {
