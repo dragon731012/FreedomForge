@@ -19,16 +19,7 @@
       return r;
     })
     .then((data) => {
-      var s = data.replace(/\\n/g, "\\n")
-          .replace(/\\'/g, "\\'")
-          .replace(/\\"/g, '\\"')
-          .replace(/\\&/g, "\\&")
-          .replace(/\\r/g, "\\r")
-          .replace(/\\t/g, "\\t")
-          .replace(/\\b/g, "\\b")
-          .replace(/\\f/g, "\\f");
-      s = s.replace(/[\u0000-\u0019]+/g,"");
-      alert(s);
+      alert(data);
       //var zip = new JSZip();
       
       //var txt = 'hello';
