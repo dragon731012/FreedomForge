@@ -15,7 +15,8 @@
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then((response) => {
-      var s = response.replace(/\\n/g, "\\n")
+      var r=response.json();
+      var s = r.replace(/\\n/g, "\\n")
           .replace(/\\'/g, "\\'")
           .replace(/\\"/g, '\\"')
           .replace(/\\&/g, "\\&")
