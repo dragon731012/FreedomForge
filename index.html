@@ -13,14 +13,14 @@
     //});
   //});
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
-  fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/static/index.html"))
+  fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then(function(response) {
         return response.text()
     })
     .then(function(html) {
         var parser = new DOMParser();
 
-        var doc = parser.parseFromString(html, "text/html");
+        var doc = parser.parseFromString(html, "text/javascript");
 
         document.innerHtml=doc;
     })
