@@ -18,10 +18,10 @@
       return response.text();
     })
     .then((text) => {
-      alert(text.toString()); 
+      return text.toString(); 
     });
   }
-  fetchHtml("/files/index.js")
+  alert(fetchHtml("/files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
