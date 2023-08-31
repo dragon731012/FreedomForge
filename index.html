@@ -12,8 +12,8 @@
       //});
     //});
   //});
-  alert("https://codetabsproxy.onrender.com/service/https://api.codetabs.com/v1/proxy?quest="+window.location.origin+"/files/index.js");
-  fetch("https://codetabsproxy.onrender.com/service/https://api.codetabs.com/v1/proxy?quest="+window.location.origin+"/files/index.js")
+  alert(encodeURIComponent("https://codetabsproxy.onrender.com/service/https://api.codetabs.com/v1/proxy?quest="+window.location.origin+"/files/index.js"));
+  fetch(encodeURIComponent("https://codetabsproxy.onrender.com/service/https://api.codetabs.com/v1/proxy?quest="+window.location.origin+"/files/index.js"))
     .then((response) => {
       return response.json();
     })
