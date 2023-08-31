@@ -15,10 +15,10 @@
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
   fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
     .then((response) => {
-      return "{"+response+"}";
+      return response.json();
     })
     .then((data) => {
-      alert(JSON.stringify(data));
+      alert(data);
       //var zip = new JSZip();
       
       //var txt = 'hello';
