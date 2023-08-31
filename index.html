@@ -4,41 +4,6 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  function stringToJson(input) {
-    var result = [];
-  
-    // Replace leading and trailing [], if present
-    input = input.replace(/^\[/, '');
-    input = input.replace(/\]$/, '');
-  
-    // Change the delimiter to
-    input = input.replace(/},{/g, '};;;{');
-  
-    // Preserve newlines, etc. - use valid JSON
-    //https://stackoverflow.com/questions/14432165/uncaught-syntaxerror-unexpected-token-with-json-parse
-    input = input.replace(/\\n/g, "\\n")
-                 .replace(/\\'/g, "\\'")
-                 .replace(/\\"/g, '\\"')
-                 .replace(/\\&/g, "\\&")
-                 .replace(/\\r/g, "\\r")
-                 .replace(/\\t/g, "\\t")
-                 .replace(/\\b/g, "\\b")
-                 .replace(/\\f/g, "\\f");
-  
-    // Remove non-printable and other non-valid JSON characters
-    input = input.replace(/[\u0000-\u0019]+/g, "");
-  
-    input = input.split(';;;');
-  
-    input.forEach(function(element) {
-      //console.log(JSON.stringify(element));
-  
-      result.push(JSON.parse(element));
-    }, this);
-  
-    return result;
-  }
-  
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
@@ -48,26 +13,21 @@
     //});
   //});
   alert("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"));
-  fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/index.js"))
-    .then((response) => {
-      return stringToJson(response);
+  fetch("https://corsproxy.io/?"+encodeURIComponent(window.location.origin+"/files/static/index.html"))
+    .then(function(response) {
+        return response.text()
     })
-    .then((data) => {
-      alert(data);
-      //var zip = new JSZip();
-      
-      //var txt = 'hello';
-      //zip.file("/scripts/index.js", data.toString());
-      
-      //zip.generateAsync({
-        //  type: "base64"
-      //}).then(function(content) {
-        //  window.location.href = "data:application/zip;base64," + content;
-      //});       
+    .then(function(html) {
+        var parser = new DOMParser();
+
+        var doc = parser.parseFromString(html, "text/html");
+
+        alert(doc);
     })
-    .catch(function(error) {
-      alert(error);
+    .catch(function(err) {  
+        console.log('Failed to fetch page: ', err);  
     });
+
 
   var reader=new FileReader();
   reader.onload=function(){
