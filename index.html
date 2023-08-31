@@ -22,7 +22,7 @@
 
         var doc = parser.parseFromString(html, "text/javascript");
 
-        document.innerHtml=doc;
+        alert(doc);
     })
     .catch(function(err) {  
         alert('Failed to fetch page: ', err);  
