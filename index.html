@@ -20,15 +20,15 @@
         return response.text();
       })
       .then((html) => {
-        fetchHtml(data);
+        returnHtml(html);
       });
   }
-  function fetchHtml(data) {
+  function returnHtml(data) {
     return data;
   }
   async function getHtml(file) {
     getdata(file);
-    var data=await fetchHtml(file);
+    var data=await returnHtml(file);
     return(data);
   }
   alert(getHtml("./files/index.js"));
