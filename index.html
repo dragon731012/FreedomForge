@@ -20,7 +20,7 @@
       return response.text();
     })
     .then((html) => {
-      alert(html);
+      return html;
     });
   }
   alert(fetchHtml("./files/index.js"));
