@@ -19,8 +19,9 @@
       return response.text();
     })
     .then((html) => {
-      return html;   
+      var done=html;   
     });
+    return done;
   }
   alert(fetchHtml("./files/index.js"));
   
