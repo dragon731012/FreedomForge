@@ -36,7 +36,7 @@
 function returnhtml(file){
     fetchHtml(file);
     waitForElm('.code').then((elm) => {
-      var code=elm.innerHTML;
+      var code=elm.value;
       elm.remove();
       return code;
   });
@@ -49,7 +49,7 @@ function returnhtml(file){
     })
     .then((html) => {
       var code=document.createElement("div");
-      code.innerHTML=html;
+      code.value=html;
       code.className=".code";
       document.appendChild(code);
     });
