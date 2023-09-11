@@ -14,16 +14,15 @@
     //});
   //});
   function fetchHtml(file) {
-    fetch(file)
+  fetch(file)
     .then((response) => {
       return response.text();
     })
-    .then((text) => {
-      return text.toString(); 
+    .then((html) => {
+      alert(html);   
     });
   }
-  alert(window.location.origin+"/files/index.js");
-  alert(fetchHtml(window.location.origin+"/files/index.js"));
+  alert(fetchHtml("./files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
