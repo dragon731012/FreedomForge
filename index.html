@@ -51,7 +51,7 @@ function returnhtml(file){
       var code=document.createElement("div");
       code.value=html;
       code.className=".code";
-      document.appendChild(code);
+      document.body.appendChild(code);
     });
   }
   alert(returnhtml("./files/index.js"));
