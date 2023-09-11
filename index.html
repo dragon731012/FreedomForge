@@ -23,10 +23,10 @@
         fetchHtml(file);
       });
   }
-  async fetchHtml(file) {
+  function fetchHtml(file) {
     return data;
   }
-  function getHtml(file) {
+  async function getHtml(file) {
     getdata(file);
     var data=await fetchHtml(file);
     return(data);
