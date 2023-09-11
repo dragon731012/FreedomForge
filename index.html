@@ -13,17 +13,48 @@
       //});
     //});
   //});
+  function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                observer.disconnect();
+                resolve(document.querySelector(selector));
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
+
+function returnhtml(file){
+    fetchHtml(file);
+    waitForElm('.code').then((elm) => {
+      var code=elm.innerHTML;
+      elm.remove();
+      return code;
+  });
+}
+  
   function fetchHtml(file) {
   fetch(file)
     .then((response) => {
       return response.text();
     })
     .then((html) => {
-      var done=html;   
+      var code=document.createElement("div");
+      code.innerHTML=html;
+      code.className=".code";
+      document.appendChild(code);
     });
-    return done;
   }
-  alert(fetchHtml("./files/index.js"));
+  alert(returnhtml("./files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
