@@ -14,7 +14,7 @@
     //});
   //});
   function fetchHtml(file) {
-    fetch(file)
+    fetch("https://api.codetabs.com/v1/proxy/?quest="+file)
     .then((response) => {
       return response.text();
     })
