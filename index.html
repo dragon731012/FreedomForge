@@ -5,15 +5,13 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  function waitForVar(vari){
-      if(vari!=null && vari!=undefined){
-          alert(vari);
-          return vari;
+  function waitFor(variable, callback) {
+    var interval = setInterval(function() {
+      if (window[variable]) {
+        clearInterval(interval);
+        callback();
       }
-      else{
-          setTimeout(waitForVar, 5);
-          alert(vari);
-      }
+    }, 5);
   }
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
@@ -35,8 +33,9 @@
   }
   function getHtml(file){
     storeHtml(file);
-    var code=waitForVar(window.htmlcode);
-    return code;
+    waitFor('htmlcode', function() {
+      return window.htmlcode;
+    });
   }
   alert(getHtml("./files/index.js"));
   
