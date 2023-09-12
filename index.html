@@ -19,6 +19,7 @@
         return response.text();
       })
       .then((html) => {
+        alert(html);
         window.htmlcode=html;
       });
       return window.htmlcode;
