@@ -10,6 +10,7 @@
       if (window[variable]) {
         clearInterval(interval);
         callback();
+        return;
       }
     }, 5);
   }
