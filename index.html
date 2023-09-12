@@ -5,15 +5,6 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  function waitFor(variable, callback) {
-    var interval = setInterval(function() {
-      if (window[variable]) {
-        clearInterval(interval);
-        callback();
-        return;
-      }
-    }, 5);
-  }
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
@@ -32,13 +23,20 @@
         window.htmlcode=html;
       });
   }
-  function getHtml(file){
+  async function getHtml(file){
     storeHtml(file);
-    waitFor('htmlcode', function() {
-      return window.htmlcode;
-    });
+    function looping(){
+      if (window.htmlcode==null || window.htmlcode==undefined){
+        setTimeout(looping,5);
+      }
+      else{
+        return window.htmlcode;
+      }
+    }
+    setTimeout(looping,5);
   }
-  alert(getHtml("./files/index.js"));
+  var html=await getHtml("./files/index.js");
+  alert(html);
   
   var reader=new FileReader();
   reader.onload=function(){
