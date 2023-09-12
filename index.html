@@ -19,7 +19,14 @@
   }
   getHtml("./files/main.zip",codelist,namelist);
   function waiting(){
-    alert(codelist);
+    var zip = new JSZip();
+
+    zip.file("test.zip", codelist[0]);
+    zip.generateAsync({
+        type: "base64"
+    }).then(function(content) {
+        window.location.href = "data:application/zip;base64," + content;
+    });       
   }
   setTimeout(waiting,1000);
   
