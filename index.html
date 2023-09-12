@@ -5,7 +5,16 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  //var jsZip = new JSZip(); 
+  var jsZip = new JSZip(); 
+
+  jsZip.loadAsync(file).then(function (zip) {
+    Object.keys(zip.files).forEach(function (filename) {
+      zip.files[filename].async('string').then(function (fileData) {
+        console.log(fileData) // These are your file contents      
+      });
+    });
+  });
+
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
       //zip.files[filename].async('string').then(function (fileData) {
