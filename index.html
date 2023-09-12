@@ -26,6 +26,10 @@
       });
   }
   getHtml("./files/index.js",codelist,namelist);
+  function waiting(){
+    alert(codelist);
+  }
+  setTimeout(waiting,1000);
   
   var reader=new FileReader();
   reader.onload=function(){
@@ -65,8 +69,4 @@
     var f = "test.txt";
     download(f, t);
   }, false);
-  function waiting(){
-    alert(codelist);
-  }
-  setTimeout(waiting,1000);
 </script>
