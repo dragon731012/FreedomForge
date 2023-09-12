@@ -13,24 +13,19 @@
       //});
     //});
   //});
-  function waitforhtml(file){
+  var codelist=[];
+  var namelist=[];
+  function getHtml(file,codelist,namelist){
     fetch(file)
       .then((response) => {
         return response.text();
       })
       .then((html) => {
-        window.htmlcode=html.toString();
+        codelist.push(html);
+        namelist.push(file);
       });
-      function waiting(){
-        if (window.htmlcode!=undefined){
-          clearInterval(window.interval);
-          return window.htmlcode;
-        }
-      }
-    window.interval=setInterval(waiting,5);
   }
-    var html=await waitforhtml(file);
-    alert(window.htmlcode);
+  getHtml("./files/index.js",codelist,namelist);
   
   var reader=new FileReader();
   reader.onload=function(){
