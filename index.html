@@ -13,25 +13,6 @@
       //});
     //});
   //});
-  function change(fileInput) {
-            if(fileInput.files[0] == undefined) {
-                return;
-            }
-            var filename = fileInput.files[0].name;
-            var reader = new FileReader();
-            reader.onload = function(ev) {
-                JSZip.loadAsync(ev.target.result).then(function(zip) {
-                    alert(zip);
-                }).catch(function(err) {
-                    alert("Failed to open", filename, " as ZIP file");
-                })
-            };
-            reader.onerror = function(err) {
-                alert("Failed to read file", err);
-            }
-            reader.readAsArrayBuffer(fileInput.files[0]);
-        }
-  
   function waitforhtml(file){
     fetch(file)
       .then((response) => {
@@ -40,18 +21,10 @@
       .then((html) => {
         window.htmlcode=html;
       });
-    var looping = setInterval(function() {
-      console.log('Interval Running');
-      if( window.htmlcode == "undefined" || window.htmlcode == ""){}
-      else{
-        console.log('Interval Stopped');
-        clearInterval(looping);
-        return window.htmlcode;
-      }
-    }, 200);
+      return window.htmlcode;
   }
   async function getHtml(file){
-    var html=await getHtml(file);
+    var html=await waitforhtml(file);
     return html;
   }
   alert(getHtml("./files/index.js"));
