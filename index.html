@@ -1,4 +1,4 @@
-<input id="input" type="file" style="display:none;">
+<input id="input" type="file" onchange="change(this)">
 <script src='dist/jszip.js' style="display:none;"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <button id="button" style="display:none;">download</button>
@@ -13,6 +13,24 @@
       //});
     //});
   //});
+  function change(fileInput) {
+            if(fileInput.files[0] == undefined) {
+                return;
+            }
+            var filename = fileInput.files[0].name;
+            var reader = new FileReader();
+            reader.onload = function(ev) {
+                JSZip.loadAsync(ev.target.result).then(function(zip) {
+                    alert(zip);
+                }).catch(function(err) {
+                    alert("Failed to open", filename, " as ZIP file");
+                })
+            };
+            reader.onerror = function(err) {
+                alert("Failed to read file", err);
+            }
+            reader.readAsArrayBuffer(fileInput.files[0]);
+        }
   
   function waitforhtml(file){
     fetch(file)
