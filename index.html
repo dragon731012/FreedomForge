@@ -25,15 +25,14 @@
   }
   function waitforhtml(file){
     storeHtml(file);
-    function looping(){
-      if (window.htmlcode==null || window.htmlcode==undefined){
-        setTimeout(looping,50);
-      }
+    var looping=function(){
+      if (window.htmlcode==null || window.htmlcode==undefined){}
       else{
+        clearInterval(looping);
         return window.htmlcode;
       }
     }
-    setTimeout(looping,5);
+    setInterval(looping,5);
   }
   async function getHtml(file){
     var html=await getHtml(file);
