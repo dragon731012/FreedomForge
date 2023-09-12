@@ -31,7 +31,7 @@
   }
   async function getHtml(file){
     var html=await waitforhtml(file);
-    return window.htmlcode.toString();
+    return window.htmlcode.text();
   }
   alert(getHtml("./files/index.js"));
   
