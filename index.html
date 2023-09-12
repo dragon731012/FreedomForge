@@ -5,6 +5,14 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  function waitForVar(vari){
+      if(typeof vari !== "undefined"){
+          return vari;
+      }
+      else{
+          setTimeout(waitForElement, 5);
+      }
+  }
   //var jsZip = new JSZip(); 
   //jsZip.loadAsync("files/main.zip").then(function (zip) {
     //Object.keys(zip.files).forEach(function (filename) {
@@ -23,8 +31,12 @@
         window.htmlcode=html;
       });
   }
-  storeHtml("./files/index.js");
-  alert(window.htmlcode);
+  function getHtml(file){
+    storeHtml(file);
+    var code=waitForVar(window.htmlcode);
+    return code;
+  }
+  alert(getHtml("./files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
