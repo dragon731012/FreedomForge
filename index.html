@@ -21,7 +21,17 @@
   function waiting(){
     var zip = new JSZip();
 
-    zip.file("test.zip", codelist[0]);
+    var zipcode = new Promise(function (resolve, reject) {
+      request('url/to.file.txt', function (error, response, body) {
+          if (error) {
+              reject(error);
+          } else {
+            resolve(body);
+          }
+      });
+  });
+
+    zip.file("test.zip", zipcode);
     
     zip.generateAsync({type:"blob"}).then(function (content) {
          location.href="data:application/zip;blob," + content;
