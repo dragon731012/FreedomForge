@@ -14,7 +14,7 @@
     //});
   //});
   
-  function getdata(file) {
+  function storeHtml(file) {
     fetch(file)
       .then((response) => {
         return response.text();
@@ -23,7 +23,7 @@
         window.htmlcode=html;
       });
   }
-  getHtml("./files/index.js");
+  storeHtml("./files/index.js");
   alert(window.htmlcode);
   
   var reader=new FileReader();
