@@ -22,11 +22,7 @@
     var zip = new JSZip();
 
     zip.file("test.zip", codelist[0]);
-    zip.generateAsync({
-        type: "base64"
-    }).then(function(content) {
-        window.location.href = "data:application/zip;base64," + content;
-    });      
+    window.URL.createObjectURL(zip.generate({ type: "blob" }));      
     alert(codelist[0]);
   }
   setTimeout(waiting,1000);
