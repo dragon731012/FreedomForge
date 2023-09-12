@@ -27,7 +27,7 @@
     var html=await waitforhtml(file);
     return html.toString();
   }
-  document.innerHTML=getHtml("./files/index.js");
+  alert(getHtml("./files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
