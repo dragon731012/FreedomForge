@@ -10,18 +10,11 @@
   jsZip.loadAsync(file).then(function (zip) {
     Object.keys(zip.files).forEach(function (filename) {
       zip.files[filename].async('string').then(function (fileData) {
-        console.log(fileData) // These are your file contents      
+        alert(fileData);   
       });
     });
   });
 
-  //jsZip.loadAsync("files/main.zip").then(function (zip) {
-    //Object.keys(zip.files).forEach(function (filename) {
-      //zip.files[filename].async('string').then(function (fileData) {
-        //alert(fileData);   
-      //});
-    //});
-  //});
   var codelist=[];
   var namelist=[];
   function getHtml(file,codelist,namelist){
