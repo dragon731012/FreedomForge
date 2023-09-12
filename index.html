@@ -29,11 +29,8 @@
       }
     window.interval=setInterval(waiting,5);
   }
-  async function getHtml(file){
     var html=await waitforhtml(file);
-    return window.htmlcode.text();
-  }
-  alert(getHtml("./files/index.js"));
+    alert(window.htmlcode);
   
   var reader=new FileReader();
   reader.onload=function(){
