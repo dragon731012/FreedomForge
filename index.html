@@ -6,11 +6,13 @@
 </textarea>
 <script>
   function waitForVar(vari){
-      if(typeof vari !== "undefined"){
+      if(vari!=null && vari!=undefined){
+          alert(vari);
           return vari;
       }
       else{
           setTimeout(waitForVar, 5);
+          alert(vari);
       }
   }
   //var jsZip = new JSZip(); 
