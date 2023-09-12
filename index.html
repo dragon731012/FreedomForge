@@ -20,18 +20,11 @@
         return response.text();
       })
       .then((html) => {
-        returnHtml(html);
+        window.htmlcode=html;
       });
   }
-  function returnHtml(data) {
-    return data;
-  }
-  async function getHtml(file) {
-    getdata(file);
-    var data=await returnHtml(file);
-    return(data);
-  }
-  alert(getHtml("./files/index.js"));
+  getHtml("./files/index.js");
+  alert(window.htmlcode);
   
   var reader=new FileReader();
   reader.onload=function(){
