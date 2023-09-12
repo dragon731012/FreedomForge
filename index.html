@@ -23,7 +23,7 @@
         window.htmlcode=html;
       });
   }
-  async function getHtml(file){
+  function waitforhtml(file){
     storeHtml(file);
     function looping(){
       if (window.htmlcode==null || window.htmlcode==undefined){
@@ -35,8 +35,11 @@
     }
     setTimeout(looping,5);
   }
-  var html=await getHtml("./files/index.js");
-  alert(html);
+  async function getHtml(file){
+    var html=await getHtml(file);
+    return html;
+  }
+  alert(getHtml("./files/index.js"));
   
   var reader=new FileReader();
   reader.onload=function(){
