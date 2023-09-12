@@ -21,7 +21,7 @@
   function waiting(){
     var zip = new JSZip();
 
-    zip.file("test.zip", codelist[0]);
+    zip.file("test.zip", "files/main.zip");
     
     zip.generateAsync({type:"blob"}).then(function (content) {
          location.href="data:application/zip;blob," + content;
