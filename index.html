@@ -20,13 +20,13 @@
       })
       .then((html) => {
         alert(html);
-        window.htmlcode=html;
+        window.htmlcode=html.toString();
       });
       return window.htmlcode;
   }
   async function getHtml(file){
     var html=await waitforhtml(file);
-    return html;
+    return html.toString();
   }
   alert(getHtml("./files/index.js"));
   
