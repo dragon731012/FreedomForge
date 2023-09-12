@@ -24,6 +24,7 @@
       function waiting(){
         if (window.htmlcode!=undefined){
           alert(window.htmlcode);
+          clearInterval(waiting);
           return window.htmlcode;
         }
       }
