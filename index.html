@@ -25,14 +25,15 @@
   }
   function waitforhtml(file){
     storeHtml(file);
-    var looping=function(){
-      if (window.htmlcode==null || window.htmlcode==undefined){}
+    var looping = setInterval(function() {
+      console.log('Interval Running');
+      if( window.htmlcode == "undefined" || window.htmlcode == ""){}
       else{
+        console.log('Interval Stopped');
         clearInterval(looping);
         return window.htmlcode;
       }
-    }
-    setInterval(looping,5);
+    }, 200);
   }
   async function getHtml(file){
     var html=await getHtml(file);
