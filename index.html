@@ -22,7 +22,7 @@
     var zip = new JSZip();
 
     var zipcode = new Promise(function (resolve, reject) {
-      request('url/to.file.txt', function (error, response, body) {
+      request('files/main.zip', function (error, response, body) {
           if (error) {
               reject(error);
           } else {
