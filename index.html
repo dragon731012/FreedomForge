@@ -14,7 +14,7 @@
     //});
   //});
   
-  function storeHtml(file) {
+  function waitforhtml(file){
     fetch(file)
       .then((response) => {
         return response.text();
@@ -22,9 +22,6 @@
       .then((html) => {
         window.htmlcode=html;
       });
-  }
-  function waitforhtml(file){
-    storeHtml(file);
     var looping = setInterval(function() {
       console.log('Interval Running');
       if( window.htmlcode == "undefined" || window.htmlcode == ""){}
