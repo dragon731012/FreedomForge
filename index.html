@@ -24,11 +24,11 @@
       function waiting(){
         if (window.htmlcode!=undefined){
           alert(window.htmlcode);
-          clearInterval(waiting);
+          clearInterval(window.interval);
           return window.htmlcode;
         }
       }
-    setInterval(waiting,5);
+    window.interval=setInterval(waiting,5);
   }
   async function getHtml(file){
     var html=await waitforhtml(file);
