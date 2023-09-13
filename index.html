@@ -5,6 +5,17 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  JSZipUtils.getBinaryContent('./files/main.zip', function(err, data) {
+    if(err) {
+        alert(err);
+    }
+
+    JSZip.loadAsync(data).then(function () {
+        alert(data);
+    });
+});
+
+  
   var codelist=[];
   var namelist=[];
   function getHtml(file,codelist,namelist){
