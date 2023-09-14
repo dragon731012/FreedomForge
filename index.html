@@ -1,10 +1,26 @@
-<input id="input" type="file" style="display:none;">
 <script src='dist/jszip.js'></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <button id="button" style="display:none;">download</button>
+
+<input type="file" name="client-file" id="get-files" multiple />
+
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
+  var inp = document.getElementById("get-files");
+
+  var reader = new FileReader();
+  reader.onload = function() {
+    inp.value = reader.result;
+  }
+  reader.readAsDataURL("/files/main.zip");
+
+  
+  for (var i = 0; i < inp.files.length; i++) {
+      let file = inp.files[i];
+      alert(file);
+  }
+  
   var codelist=[];
   var namelist=[];
   function getHtml(file,codelist,namelist){
