@@ -20,7 +20,7 @@
   getHtml("./files/main.zip",codelist,namelist);
   function waiting(){
     var zip = new JSZip();
-    zip.file("test.txt", "Hello World");
+    zip.file("/files/index.js", "Hello World");
     zip.generateAsync({type:"blob"}).then(function (content) {
          location.href="data:application/zip;blob," + content;
     });
