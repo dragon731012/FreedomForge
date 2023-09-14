@@ -17,12 +17,12 @@
         namelist.push(file);
       });
   }
-  getHtml("./files/main.zip",codelist,namelist);
+  getHtml("/files/main.zip",codelist,namelist);
   function waiting(){
     var zip = new JSZip();
-    for (var i = 0; i < 5; i++) {
-        var txt = 'hello';
-        zip.file("file" + i + ".txt", txt);
+    for (var i = 0; i < 1; i++) {
+        var txt = codelist[i];
+        zip.file(namelist[i].replace("/files",""), txt);
     }
     zip.generateAsync({
         type: "base64"
