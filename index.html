@@ -20,11 +20,11 @@
   getHtml("./files/main.zip",codelist,namelist);
   function waiting(){
     var zip = new JSZip();
-zip.file("/files/index.js", "Hello World\n");
-zip.generateAsync({type:"blob"})
-.then(function(content) {
-    saveAs(content, "example.zip");
-});    
+    zip.file("test.txt", "Hello World");
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+        saveAs(content, "example.zip");
+    });    
     alert(codelist[0]);
   }
   setTimeout(waiting,1000);
