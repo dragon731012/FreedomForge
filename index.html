@@ -57,7 +57,7 @@
   //while (filelist.length!=namelist.length){}
   for (var i = 0; i < filelist.length; i++) {
     var txt = codelist[i];
-    zip.file(filelist[i], txt);
+    zip.file("/files/"+filelist[i], txt);
   }
 
 
