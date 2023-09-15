@@ -9,11 +9,6 @@
 <script>
   var inp = document.getElementById("get-files");
 
-  var reader = new FileReader();
-  reader.onload = function() {
-    inp.value = reader.result;
-  }
-  reader.readAsDataURL("/files/main.zip");
 
   
   for (var i = 0; i < inp.files.length; i++) {
@@ -31,7 +26,7 @@
         })
         .then((html) => {
           codelist.push(html);
-          namelist.push(file);
+          namelist.push(filelist[i]);
         });
     }
   }
@@ -69,7 +64,7 @@
     for (var i = 0; i < inp.files.length;) {
       var name = inp.files.item(i).name;
       
-      var value = reader.readAsText(input.files[i]);
+      var value = reader.readAsText(inp.files[i]);
       alert("file name: " + name);
       alert("file value: " + value);
       text.value=value;
