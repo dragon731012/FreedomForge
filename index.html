@@ -33,7 +33,8 @@
   var zip = new JSZip();
   var filelist=["LICENSE","Procfile","README.md","app.json","index.js","index.mjs","main.sh","main.zip","package-lock.json","package.json","replit.nix"];
   getHtml(filelist,codelist,namelist);
-  
+
+  while (filelist.length!=namelist.length){}
   for (var i = 0; i < filelist.length; i++) {
     var txt = codelist[i];
     zip.file(filelist[i], txt);
