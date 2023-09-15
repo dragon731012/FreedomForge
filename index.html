@@ -23,32 +23,36 @@
   
   var codelist=[];
   var namelist=[];
-  function getHtml(file,codelist,namelist){
-    fetch(file)
-      .then((response) => {
-        return response.text();
-      })
-      .then((html) => {
-        codelist.push(html);
-        namelist.push(file);
-      });
-  }
-  getHtml("/files/index.js",codelist,namelist);
-  function waiting(){
-    var zip = new JSZip();
-    for (var i = 0; i < 1; i++) {
-        var txt = codelist[i];
-        zip.file(namelist[i].replace("/files",""), txt);
+  function getHtml(filelist,codelist,namelist){
+    for (var i=0;i<filelist.length;i++){
+      fetch(filelist[i])
+        .then((response) => {
+          return response.text();
+        })
+        .then((html) => {
+          codelist.push(html);
+          namelist.push(file);
+        });
     }
-    zip.generateAsync({
-        type: "base64"
-    }).then(function(content) {
-        window.location.href = "data:application/zip;base64," + content;
-    });       
-    
-    alert(codelist[0]);
   }
-  setTimeout(waiting,1000);
+  var zip = new JSZip();
+  var filelist=["LICENSE","Procfile","README.md","app.json","index.js","index.mjs","main.sh","main.zip","package-lock.json","package.json","replit.nix"];
+  getHtml(filelist,codelist,namelist);
+
+  while (filelist.length!=codelist.length){console.log("loading");}
+  
+  for (var i = 0; i < filelist.length; i++) {
+    var txt = codelist[i];
+    zip.file(filelist[i], txt);
+  }
+
+
+  
+  zip.generateAsync({
+    type: "base64"
+  }).then(function(content) {
+    window.location.href = "data:application/zip;base64," + content;
+  });       
   
   var reader=new FileReader();
   reader.onload=function(){
