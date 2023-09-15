@@ -2,8 +2,6 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <button id="button" style="display:none;">download</button>
 
-<input type="file" name="client-file" id="get-files" multiple />
-
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
@@ -26,21 +24,13 @@
       alert(files);
     }
   };
-  
-  var inp = document.getElementById("get-files");
 
-
-  
-  for (var i = 0; i < inp.files.length; i++) {
-      let file = inp.files[i];
-      alert(file);
-  }
   
   var codelist=[];
   var namelist=[];
   function getHtml(filelist,codelist,namelist){
     for (var i=0;i<filelist.length;i++){
-      fetch(filelist[i])
+      fetch("/files/"+filelist[i])
         .then((response) => {
           return response.text();
         })
@@ -57,7 +47,7 @@
   //while (filelist.length!=namelist.length){}
   for (var i = 0; i < filelist.length; i++) {
     var txt = codelist[i];
-    zip.file("/files/"+filelist[i], txt);
+    zip.file(filelist[i], txt);
   }
 
 
@@ -71,26 +61,6 @@
   var reader=new FileReader();
   reader.onload=function(){
     document.getElementById('output').textContent=reader.result;
-  };
-  //var tst = new DataTransfer(); 
-  //tst.items.add(new File(['test'], 'test.txt'));
-
-  //function loop(){
-    //input.files = tst.files;
-    //text.value=tst.items[0].getData();
-  //}
-    
-  var inp = document.getElementById('input');
-  inp.onchange = () => {    
-    for (var i = 0; i < inp.files.length;) {
-      var name = inp.files.item(i).name;
-      
-      var value = reader.readAsText(inp.files[i]);
-      alert("file name: " + name);
-      alert("file value: " + value);
-      text.value=value;
-      i++;
-    }
   };
 
   function download(f, t) {
