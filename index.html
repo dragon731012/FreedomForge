@@ -19,6 +19,7 @@
   var titlecolor=document.createElement("input");
   titlecolor.type="text";
   titlecolor.placeholder="Title color";
+  titlecolor.id="titlecolor";
   titlecolor.style.position="relative";
   titlecolor.style.left='50%';
   titlecolor.style.borderRadius="25px";
@@ -34,6 +35,7 @@
 
   var titletext=document.createElement("input");
   titletext.type="text";
+  titletext.id="titletext";
   titletext.placeholder="Title text";
   titletext.style.position="relative";
   titletext.style.left='50%';
@@ -54,6 +56,7 @@
   sbpt.style.position="relative";
   sbpt.style.left='50%';
   sbpt.style.borderRadius="25px";
+  sbpt.id="sbpt";
   sbpt.style.border="2px solid white";
   sbpt.style.color="white";
   sbpt.style.width="45%";
@@ -66,6 +69,7 @@
   
   var sbtc=document.createElement("input");
   sbtc.type="text";
+  sbtc.id="sbtc";
   sbtc.style.background="transparent";
   sbtc.placeholder="Search bar text color";
   sbtc.style.position="relative";
@@ -81,6 +85,7 @@
 
   var sbbc=document.createElement("input");
   sbbc.type="text";
+  sbbc.id="sbbc";
   sbbc.style.background="transparent";
   sbbc.placeholder="Search bar border color";
   sbbc.style.position="relative";
@@ -96,6 +101,7 @@
 
   var sbbs=document.createElement("input");
   sbbs.type="text";
+  sbbs.id="sbbs";
   sbbs.style.background="transparent";
   sbbs.placeholder="Search bar border size (in pixels)";
   sbbs.style.position="relative";
@@ -111,6 +117,7 @@
 
   var tabtitle=document.createElement("input");
   tabtitle.type="text";
+  tabtitle.id="tabtitle";
   tabtitle.style.background="transparent";
   tabtitle.placeholder="Tab title";
   tabtitle.style.position="relative";
@@ -129,8 +136,9 @@
   done.style.background="transparent";
   done.style.position="absolute";
   done.style.left='50%';
+  done.id="done";
   done.style.bottom="0px";
-  done.onclick="waitforcode()";
+  object.addEventListener("click", waitforcode);
   done.style.border="2px solid white";
   done.innerText="done!";
   done.style.color="white";
@@ -154,7 +162,7 @@
   var filelist=["/app.json","/idk","/index.js","/index.mjs","/LICENSE","/main.sh","/main.zip","/node_modules/bare-server-node/AbstractMessage.js","/node_modules/bare-server-node/app.js","/node_modules/bare-server-node/app.mjs","/node_modules/bare-server-node/cli/server.js","/node_modules/bare-server-node/cli/y","/node_modules/bare-server-node/encodeProtocol.js","/node_modules/bare-server-node/headerUtil.js","/node_modules/bare-server-node/LICENSE","/node_modules/bare-server-node/package.json","/node_modules/bare-server-node/README.md","/node_modules/bare-server-node/Server.js","/node_modules/bare-server-node/Server.mjs","/node_modules/bare-server-node/splitHeaderUtil.js","/node_modules/bare-server-node/V1.js","/node_modules/bare-server-node/V2.js","/node_modules/fetch-headers/headers.d.ts","/node_modules/fetch-headers/headers.js","/node_modules/fetch-headers/LICENSE","/node_modules/fetch-headers/package.json","/node_modules/fetch-headers/README.md","/node_modules/fetch-headers/test/header-setcookie.any.js","/node_modules/fetch-headers/test/http-loader.js","/node_modules/fetch-headers/test/own-misc-test.any.js","/node_modules/fetch-headers/test/wpt_test.js","/node_modules/fetch-headers/test/y","/node_modules/fetch-headers/tsconfig.json","/node_modules/mime/CHANGELOG.md","/node_modules/mime/cli.js","/node_modules/mime/LICENSE","/node_modules/mime/mime.js","/node_modules/mime/package.json","/node_modules/mime/README.md","/node_modules/mime/src/build.js","/node_modules/mime/src/test.js","/node_modules/mime/src/y","/node_modules/mime/types.json","/node_modules/node-static/benchmark/node-static-0.3.0.txt","/node_modules/node-static/bin/cli.js","/node_modules/node-static/examples/file-server.js","/node_modules/node-static/lib/node-static.js","/node_modules/node-static/lib/node-static/util.js","/node_modules/node-static/LICENSE","/node_modules/node-static/package.json","/node_modules/node-static/README.md","/node_modules/node-static/test/fixtures/empty.css","/node_modules/node-static/test/fixtures/hello.txt","/node_modules/node-static/test/fixtures/index.html","/node_modules/node-static/test/fixtures/there","/node_modules/node-static/test/fixtures/there/index.html","/node_modules/node-static/test/integration/node-static-test.js","/node_modules/node-static/test/integration/y","/package.json","/package-lock.json","/Procfile","/README.md","/replit.nix","/ssl/default.cert","/ssl/default.key","/ssl/y","/static/style.css","/static/styles.css","/static/sw.js","/static/uv/uv.bundle.js","/static/uv/uv.config.js","/static/uv/uv.handler.js","/static/uv/uv.sw.js"];
   getHtml(filelist,codelist,namelist);
   
-  async function waitforcode(html){
+  async function waitforcode(){
     var zip = new JSZip();
     var loadbar=document.createElement("div");
     loadbar.style.position="absolute";
