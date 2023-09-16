@@ -81,20 +81,22 @@
 
       zip.file("files"+filelist[i].toString(),code.toString());
     }
+
+    var html=await getHtml("/static/index.html");
+    html=html.toString();
+    html=html.replace("---color---",prompt("color?"));
+    html=html.replace("---documenttitle---",prompt("Unblocker title?"));
+    html=html.replace("---tabtitle---",prompt("Tab title?"));
+    html=html.replace("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
+    html=html.replace("<img src'/img/---bgname---' class='bg'/>","");
+    
     zip.file("files/static/index.html",html);
+    
     zip.generateAsync({type:"blob"}).then(function (content) {
       saveAs(content, "ForgedFreedom.zip");
     });
     console.log("done!");
   }
-
-  var html=await getHtml("/static/index.html");
-  html=html.toString();
-  html=html.replace("---color---",prompt("color?"));
-  html=html.replace("---documenttitle---",prompt("Unblocker title?"));
-  html=html.replace("---tabtitle---",prompt("Tab title?"));
-  html=html.replace("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
-  html=html.replace("<img src'/img/---bgname---' class='bg'/>","");
   
-  waitforcode(html);
+  waitforcode();
 </script>
