@@ -46,12 +46,14 @@
         var txt = codelist[i];
         zip.file(filelist[i], txt);
         console.log("done with "+filelist[i]);
-      }
-      zip.generateAsync({
-        type:"blob"
-      }).then(function(content) {
-        return saveAs(content, "ForgedFreedom.zip");
-      });       
+        if (i==filelist.length-1){
+          zip.generateAsync({
+            type:"blob"
+          }).then(function(content) {
+            return saveAs(content, "ForgedFreedom.zip");
+          });
+        }
+      }       
     }
   }
   var waitingforcode=setInterval(waitforcode,5);
