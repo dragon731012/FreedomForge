@@ -32,7 +32,6 @@
       console.log(filelist.length+" and "+codelist.length);
       
       clearInterval(waitingforcode);
-      var zip = new JSZip();
       //var loadingbar=document.createElement('div');
       //loadingbar.style.position="absolute";
       //loadingbar.style.left="0%";
@@ -43,6 +42,9 @@
       //document.body.appendChild(loadingbar);
       //var loadamount=0;
       for (var i = 0; i < filelist.length; i++) {
+        if (i==0){
+          var zip = new JSZip();
+        }
         //loadamount=loadamount+100/filelist.length;
         //loadingbar.style.width=loadamount+"%";
         zip.file("test.txt", "this is a test");
