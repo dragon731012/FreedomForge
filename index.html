@@ -48,16 +48,34 @@
     loadfile.style.left="0px";
     loadfile.style.width="100%";
     loadfile.style.height="15px";
-    loadfile.style.fontSize="45px";
+    loadfile.style.fontSize="15px";
     document.body.appendChild(loadfile);
 
     var text=document.createElement("h2");
     loadfile.appendChild(text);
+
+    var percent=document.createElement("div");
+    percent.style.position="absolute";
+    percent.style.color="white";
+    percent.style.textAlign="center";
+    percent.style.bottom="60%";
+    percent.style.left="0px";
+    percent.style.width="100%";
+    percent.style.height="15px";
+    percent.style.fontSize="30px";
+    document.body.appendChild(percent);
+
+    var text=document.createElement("h2");
+    loadfile.appendChild(text);
+
+    var ptext=document.createElement("h2");
+    percent.appendChild(ptext);
     
     for (var i=0; i<filelist.length; i++){
       text.innerText=filelist[i];
       var code=await getHtml(filelist[i]);
       loadamount=loadamount+100/filelist.length;
+      ptext.innerText=Math.round(loadamount);
       loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
       zip.file(filelist[i],code);
