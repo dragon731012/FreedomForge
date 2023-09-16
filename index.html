@@ -53,7 +53,7 @@
     for (var i=0; i<filelist.length; i++){
       loadfile.value=filelist[i];
       var code=await getHtml(filelist[i]);
-      loadamount=loadamount+filelist.length/2;
+      loadamount=loadamount+filelist.length/100;
       loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
       zip.file(filelist[i],code);
