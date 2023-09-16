@@ -7,10 +7,9 @@
 <script>
   
   function get_list(folder){
-    var list_of_files = [];
+    var list_of_files = {};
     var starting_character = 0;
-       list_of_files = every_single_option({starting_character}, 0, 40, folder)
-    }
+    list_of_files = every_single_option({starting_character}, 0, 40, folder);
   }
   function every_single_option(existing_characters, current_depth, max_depth, folder){
     this_string = String.fromCharCode(existing_characters);
