@@ -84,12 +84,12 @@
 
     var html=await getHtml("/static/index.html");
     html=html.toString();
-    html=html.replace("---color---",prompt("color?"));
-    html=html.replace("---documenttitle---",prompt("Unblocker title?"));
-    html=html.replace("---tabtitle---",prompt("Tab title?"));
-    html=html.replace("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
-    html=html.replace("<img src='/img/---bgname---' class='bg'/>","");
-    html=html.replace("---bordersize---",prompt("search box border size?"));
+    html=html.replaceAll("---color---",prompt("color?"));
+    html=html.replaceAll("---documenttitle---",prompt("Unblocker title?"));
+    html=html.replaceAll("---tabtitle---",prompt("Tab title?"));
+    html=html.replaceAll("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
+    html=html.replaceAll("<img src='/img/---bgname---' class='bg'/>","");
+    html=html.replaceAll("---bordersize---",prompt("search box border size?"));
 
     function waitingidk(){      
       if (html.includes("---bordersize---") || html.includes("---color---") || html.includes("---tabtitle---") || html.includes("---documenttitle---")){
