@@ -82,12 +82,7 @@
       zip.file(filelist[i],code);
     }
     zip.generateAsync({type:"blob"}).then(function (content) {
-      let zipblob = new Blob([content]);
-
-      var elem = window.document.createElement("a");
-      elem.href = window.URL.createObjectURL(zipblob);
-      elem.download = 'ForgedFreedom.zip';
-      elem.click();
+      saveAs(content, "ForgedFreedom.zip");
     });
     console.log("done!");
   }
