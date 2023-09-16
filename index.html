@@ -48,9 +48,9 @@
         console.log("done with "+filelist[i]);
       }
       zip.generateAsync({
-        type:"base64"
+        type:"blob"
       }).then(function(content) {
-        window.location = "data:application/zip;base64," + content;
+        return FileSaver.saveAs(content, "ForgedFreedom.zip");
       });       
     }
   }
