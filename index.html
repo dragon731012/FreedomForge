@@ -77,7 +77,7 @@
       loadamount=loadamount+100/filelist.length;
       ptext.innerText=Math.round(loadamount)+"%";
       loadbar.style.width=loadamount+"%";
-      console.log(filelist+": "+code);
+      console.log(filelist[i]+": "+code);
 
       zip.file(filelist[i],code);
     }
