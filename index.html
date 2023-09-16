@@ -32,7 +32,7 @@
         console.log("done!");
       }
       zip.generateAsync({
-        type: "charset=utf-8"
+        type: "utf-8"
       }).then(function(content) {
         window.location.href = "data:application/zip;charset=utf-8," + content;
       });       
@@ -40,18 +40,4 @@
     console.log("loading...");
   }
   var waitingforcode=setInterval(waitforcode,5);
-
-  function download(f, t) {
-    var e = document.createElement('a');
-    e.setAttribute('href','data:text/plain;charset=utf-8, '+ encodeURIComponent(t));
-    e.setAttribute('download', f);
-    document.body.appendChild(e);
-    e.click();
-    document.body.removeChild(e);
-  }
-  document.getElementById("button").addEventListener("click", function() {
-    var t = document.getElementById("text").value;
-    var f = "test.txt";
-    download(f, t);
-  }, false);
 </script>
