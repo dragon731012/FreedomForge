@@ -32,9 +32,9 @@
         clearInterval(waitingforcode);
       }
       zip.generateAsync({
-        type: "base64"
+        type: "blob"
       }).then(function(content) {
-        window.location.href = "data:application/zip;base64," + content;
+        window.location.href = "data:application/zip;blob," + content;
       });       
     }
     console.log("loading...");
