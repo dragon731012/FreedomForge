@@ -229,6 +229,8 @@
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
 
+    console.log(html);
+
     function waitingidk(){      
       if (html.includes("---bordersize---") || html.includes("---color---") || html.includes("---tabtitle---") || html.includes("---documenttitle---")){
         setTimeout(waitingidk,5);
