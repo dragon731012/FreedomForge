@@ -78,14 +78,16 @@
       ptext.innerText=Math.round(loadamount)+"%";
       loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
-      
-      var blobcode = new Blob([code], {
-          type: 'text/plain'
-      });
-      zip.file(filelist[i],blobcode);
+
+      zip.file(filelist[i],code);
     }
     zip.generateAsync({type:"blob"}).then(function (content) {
-      saveAs(content,"ForgedFreedom.zip");
+      let zipblob = new Blob([content]);
+
+      var elem = window.document.createElement("a");
+      elem.href = window.URL.createObjectURL(zipblob);
+      elem.download = 'ForgedFreedom.zip';
+      elem.click();
     });
     console.log("done!");
   }
