@@ -1,13 +1,13 @@
-<link rel="stylesheet" type="text/css" href="/style.css"/>
-<script src="uv/uv.bundle.js"></script>
-<script src="uv/uv.config.js"></script>
-<link rel="icon" type="image/x-icon" href="/images/---iconname---">
-<img src="/img/---bgname---" class="bg"/>
-<div class="title">
-    <h1 id="title1">---documenttitle---</h1>
+<link rel='stylesheet' type='text/css' href='/style.css'/>
+<script src='uv/uv.bundle.js'></script>
+<script src='uv/uv.config.js'></script>
+<link rel='icon' type='image/x-icon' href='/images/---iconname---'>
+<img src='/img/---bgname---' class='bg'/>
+<div class='title'>
+    <h1 id='title1'>---documenttitle---</h1>
 </div>
-<form class="searchbox" id="searchbox">
-    <input class="search" id="search" placeholder='Search the web freely' type='text'/>
+<form class='searchbox' id='searchbox'>
+    <input class='search' id='search' placeholder='Search the web freely' type='text'/>
 </form>
 <style>
     .bg{
@@ -36,7 +36,7 @@
     height:100%;
     }
     .title{
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     position: absolute;
     width: 100%;
     height: 100px;
@@ -54,41 +54,41 @@
 </style>
 <script>
     var credits=document.createElement('div');
-    credits.style.position="absolute";
-    credits.style.left="0px";
-    credits.style.zIndex="999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999";
-    credits.style.bottom="0px";
-    credits.style.fontSize="15px";
-    credits.style.width="100%";
-    credits.style.height="20px";
-    credits.style.textAlign="center";
+    credits.style.position='absolute';
+    credits.style.left='0px';
+    credits.style.zIndex='999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999';
+    credits.style.bottom='0px';
+    credits.style.fontSize='15px';
+    credits.style.width='100%';
+    credits.style.height='20px';
+    credits.style.textAlign='center';
     document.body.appendChild(credits);
 
     var link=document.createElement('a');
-    link.href="https://github.com/dragon731012/FreedomForge";
-    link.style.textDecoration="none";
-    link.style.color="white";
+    link.href='https://github.com/dragon731012/FreedomForge';
+    link.style.textDecoration='none';
+    link.style.color='white';
     credits.appendChild(link);
 
-    var text=document.createElement("h2");
-    text.innerText="Created with FreedomForge";
-    text.style.position="absolute";
-    text.style.left="50%";
-    text.style.transform="translateX(-50%)";
-    text.style.bottom="-15px";
+    var text=document.createElement('h2');
+    text.innerText='Created with FreedomForge';
+    text.style.position='absolute';
+    text.style.left='50%';
+    text.style.transform='translateX(-50%)';
+    text.style.bottom='-15px';
     link.appendChild(text);
     
 
 
     
-    var title2=get_cookie("title2");
-    var favicon=get_cookie("favicon");
+    var title2=get_cookie('title2');
+    var favicon=get_cookie('favicon');
     
     var fontsize1=2560/screen.width*18;
     var fontsize2=2560/screen.width*7.5;
     
-    title1.style.fontSize = fontsize1+"px";
-    search.style.fontSize = fontsize2+"px";
+    title1.style.fontSize = fontsize1+'px';
+    search.style.fontSize = fontsize2+'px';
 
     document.title=---tabtitle---;
     
