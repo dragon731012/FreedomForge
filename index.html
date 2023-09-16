@@ -29,6 +29,7 @@
     var zip = new JSZip();
     for (var i=0; i<filelist.length; i++){
       var code=await getHtml(filelist[i]);
+      console.log(filelist+": "+code);
       zip.file(filelist[i],code);
     }
     zip.generateAsync({type:"blob"}).then(function (content) {
