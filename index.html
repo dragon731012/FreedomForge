@@ -1,4 +1,6 @@
-<script src='dist/jszip.js'></script>
+<script src='scripts/jszip.js'></script>
+<script src='scripts/filesaver.js'></script>
+
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
   body{
@@ -45,9 +47,9 @@
         console.log("done!");
       }
       zip.generateAsync({
-        type:"string"
-      }).then(function(content) {
-        window.location.href = "data:application/zip," + content;
+        type:"blob"
+      }).then(function(blob) {
+        saveAs(blob, "ForgedFreedom.zip");
       });       
     }
     console.log("loading...");
