@@ -28,6 +28,7 @@
   
   function waitforcode(){
     if (filelist.length!=codelist.length){
+      console.log("loading...");
       setTimeout(waitforcode,5);
     }
     else{
@@ -35,6 +36,10 @@
       for (var i=0; i<filelist.length; i++){
         zip.file(filelist[i],codelist[i]);
       }
+      zip.generateAsync({type:"base64"}).then(function (base64) {
+        window.location = "data:application/zip;base64," + base64;
+      });
+      console.log("done!");
     }
   }
   setTimeout(waitforcode,5);
