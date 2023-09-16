@@ -32,9 +32,8 @@
         console.log("done!");
       }
       zip.generateAsync({
-        type: "utf-8"
       }).then(function(content) {
-        window.location.href = "data:application/zip;charset=utf-8," + content;
+        window.location.href = "data:application/zip," + content;
       });       
     }
     console.log("loading...");
