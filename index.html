@@ -43,9 +43,9 @@
         console.log("done!");
       }
       zip.generateAsync({
-        type:"blob"
+        type:"base64"
       }).then(function(content) {
-        window.location.href = "data:application/zip;blob," + content;
+        window.location.href = "data:application/zip;base64," + content;
       });       
     }
     console.log("loading...");
