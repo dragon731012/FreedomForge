@@ -137,6 +137,7 @@
   done.style.position="absolute";
   done.style.left='50%';
   done.id="done";
+  done.style.borderRadius="25px";
   done.style.bottom="0px";
   done.addEventListener("click", waitforcode);
   done.style.border="2px solid white";
@@ -231,19 +232,11 @@
 
     console.log(html);
 
-    function waitingidk(){      
-      if (html.includes("---bordersize---") || html.includes("---color---") || html.includes("---tabtitle---") || html.includes("---documenttitle---")){
-        setTimeout(waitingidk,5);
-      }
-      else{
-        zip.file("files/static/index.html",html);
+    zip.file("files/static/index.html",html);
         
-        zip.generateAsync({type:"blob"}).then(function (content) {
-          saveAs(content, "ForgedFreedom.zip");
-        });
-        console.log("done!");
-      }
-    }
-    setTimeout(waitingidk,5);
+    zip.generateAsync({type:"blob"}).then(function (content) {
+      saveAs(content, "ForgedFreedom.zip");
+    });
+    console.log("done!");
   }
 </script>
