@@ -5,12 +5,46 @@
 <style>
   body{
     background-color:black;
+    display:flex;
+    flex-direction: column;
+  }
+  ::placeholder{
+    color:inherit;
   }
 </style>
 <body>
   
 </body>
 <script>
+  var titlecolor=document.createElement("input");
+  titlecolor.type="text";
+  titlecolor.placeholder="Title color";
+  titlecolor.style.position="relative";
+  titlecolor.style.left='50%';
+  titlecolor.style.borderRadius="25px";
+  titlecolor.style.border="2px solid white";
+  titlecolor.style.color="white";
+  titlecolor.style.width="35%";
+  titlecolor.style.textAlign="center";
+  titlecolor.style.height="20px";
+  titlecolor.style.transform='translateX(-50%)';
+  document.body.appendChild(titlecolor);
+
+  var sbtc=document.createElement("input");
+  sbtc.type="text";
+  sbtc.placeholder="Search bar text color";
+  sbtc.style.position="relative";
+  sbtc.style.left='50%';
+  sbtc.style.borderRadius="25px";
+  sbtc.style.border="2px solid white";
+  sbtc.style.color="white";
+  sbtc.style.width="35%";
+  sbtc.style.textAlign="center";
+  sbtc.style.height="20px";
+  sbtc.style.transform='translateX(-50%)';
+  document.body.appendChild(sbtc);
+  
+  
   var codelist=[];
   var namelist=[];
   function getHtml(file){
