@@ -9,7 +9,7 @@
   var namelist=[];
   function getHtml(filelist,codelist,namelist){
     for (var i=0;i<filelist.length;i++){
-      fetch("/files/"+filelist[i])
+      fetch("/files"+filelist[i])
         .then((response) => {
           return response.text();
         })
@@ -24,28 +24,22 @@
   getHtml(filelist,codelist,namelist);
 
   function waitforcode(){
-    if (filelist.length!=codelist.length){
+    if (filelist.length==codelist.length){
       for (var i = 0; i < filelist.length; i++) {
         var txt = codelist[i];
         zip.file(filelist[i], txt);
         console.log("done!");
         clearInterval(waitingforcode);
       }
+      zip.generateAsync({
+        type: "base64"
+      }).then(function(content) {
+        window.location.href = "data:application/zip;base64," + content;
+      });       
     }
     console.log("loading...");
   }
   var waitingforcode=setInterval(waitforcode,5);
-  
-  zip.generateAsync({
-    type: "base64"
-  }).then(function(content) {
-    window.location.href = "data:application/zip;base64," + content;
-  });       
-  
-  var reader=new FileReader();
-  reader.onload=function(){
-    document.getElementById('output').textContent=reader.result;
-  };
 
   function download(f, t) {
     var e = document.createElement('a');
