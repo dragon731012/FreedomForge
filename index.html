@@ -44,7 +44,7 @@
       //document.body.appendChild(loadingbar);
       //var loadamount=0;
       for (var i = 0; i < filelist.length; i++) {
-        zip.file("/files"+filelist[i],codelist[i]);
+        zip.file("/files"+filelist[i],codelist[i],{blob: true});
         console.log("done with "+filelist[i]+" code: "+codelist[i]);
         if (i>=filelist.length-1){
           console.log("finished!");
