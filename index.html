@@ -78,7 +78,11 @@
       ptext.innerText=Math.round(loadamount);
       loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
-      zip.file(filelist[i],code);
+      
+      var blobcode = new Blob([code], {
+          type: 'text/plain'
+      });
+      zip.file(filelist[i],blobcode);
     }
     zip.generateAsync({type:"blob"}).then(function (content) {
       saveAs(content,"ForgedFreedom.zip");
