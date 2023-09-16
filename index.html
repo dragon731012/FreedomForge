@@ -123,7 +123,19 @@
   tabtitle.style.height="20px";
   tabtitle.style.transform='translateX(-50%)';
   document.body.appendChild(tabtitle);
-  
+
+
+  var done=document.createElement("button");
+  done.style.background="transparent";
+  done.style.position="absolute";
+  done.style.left='50%';
+  done.style.bottom="0px";
+  done.onclick="waitforcode();";
+  done.style.border="2px solid white";
+  done.style.color="white";
+  done.style.textAlign="center";
+  done.style.transform='translateX(-50%)';
+  document.body.appendChild(done);
   
   var codelist=[];
   var namelist=[];
@@ -223,6 +235,4 @@
     }
     setTimeout(waitingidk,5);
   }
-  
-  waitforcode();
 </script>
