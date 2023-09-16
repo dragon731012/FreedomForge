@@ -29,6 +29,8 @@
   function waitforcode(){
     console.log("loading...");
     if (filelist.length==codelist.length){
+      console.log(filelist.length+" and "+codelist.length);
+      
       clearInterval(waitingforcode);
       var zip = new JSZip();
       zip.file("test.txt", "this is a test");
