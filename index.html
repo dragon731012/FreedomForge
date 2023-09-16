@@ -5,45 +5,6 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  
-  function get_list(folder){
-    var list_of_files = {};
-    var starting_character = 0;
-    list_of_files = every_single_option({starting_character}, 0, 40, folder);
-  }
-  function every_single_option(existing_characters, current_depth, max_depth, folder){
-    this_string = String.fromCharCode(existing_characters);
-    if (request_url(this_string, folder)){
-       there_array[this_string] = this_string;
-    }
-    var there_array = {}
-    var i;
-    if (current_depth < max_depth){
-      while (i < 127){
-          let temp_array = there_array;
-          temp_array[i] = i;
-          mix_source(there_array, every_single_option(existing_characters, current_depth + 1, max_depth, folder))
-      }
-  }
-  return there_array;
-  }
-  function request_url(url, folder){
-    var oReq = new XMLHttpRequest();
-    oReq.addEventListener("load", reqListener);
-    oReq.open("GET", "/" + folder + "/" + url);
-    oReq.send();
-  }
-  function mix(source, target) {
-     for(var key in source) {
-       if (source.hasOwnProperty(key)) {
-          target[key] = source[key];
-       }
-     }
-  }
-
-  alert(get_list("/files/"));
-  
-
   var codelist=[];
   var namelist=[];
   function getHtml(filelist,codelist,namelist){
