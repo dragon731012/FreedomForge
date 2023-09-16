@@ -48,7 +48,7 @@
         loadingbar.style.width=loadamount+"%";
         var txt = codelist[i];
         zip.file(filelist[i], txt);
-        console.log("done with "+filelist[i]);
+        console.log("done with "+filelist[i]+" code: "+codelist[i]);
         if (i==filelist.length-1){
           zip.generateAsync({
             type:"blob"
