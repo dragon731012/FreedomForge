@@ -27,8 +27,32 @@
   
   async function waitforcode(){
     var zip = new JSZip();
+    var loadbar=document.createElement("div");
+    loadbar.style.position="absolute";
+    loadbar.style.width="0%";
+    loadbar.style.height="15px";
+    loadbar.style.bottom="53%";
+    loadbar.style.backgroundColor="white";
+    loadbar.style.left="0px";
+    document.body.appendChild(loadbar);
+    var loadamount=0;
+
+    var loadfile=document.createElement("div");
+    loadfile.style.position="absolute";
+    loadfile.style.color="white";
+    loadfile.style.textAlign="center";
+    loadfile.style.bottom="45%";
+    loadfile.style.left="0px";
+    loadfile.style.width="100%";
+    loadfile.style.height="15px";
+    loadfile.style.fontSize="15px";
+    document.body.appendChild(loadfile);
+    
     for (var i=0; i<filelist.length; i++){
+      loadfile.value=filelist[i];
       var code=await getHtml(filelist[i]);
+      loadamount=loadamount+fileslist.length/2;
+      loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
       zip.file(filelist[i],code);
     }
