@@ -24,25 +24,105 @@
   titlecolor.style.borderRadius="25px";
   titlecolor.style.border="2px solid white";
   titlecolor.style.color="white";
-  titlecolor.style.width="35%";
+  titlecolor.style.width="45%";
+  titlecolor.style.marginTop="10px";
   titlecolor.style.textAlign="center";
   titlecolor.style.height="20px";
+  titlecolor.style.background="transparent";
   titlecolor.style.transform='translateX(-50%)';
   document.body.appendChild(titlecolor);
 
+  var titletext=document.createElement("input");
+  titletext.type="text";
+  titletext.placeholder="Title text";
+  titletext.style.position="relative";
+  titletext.style.left='50%';
+  titletext.style.borderRadius="25px";
+  titletext.style.border="2px solid white";
+  titletext.style.color="white";
+  titletext.style.width="45%";
+  titletext.style.marginTop="10px";
+  titletext.style.textAlign="center";
+  titletext.style.height="20px";
+  titletext.style.background="transparent";
+  titletext.style.transform='translateX(-50%)';
+  document.body.appendChild(titletext);
+
+  var sbpt=document.createElement("input");
+  sbpt.type="text";
+  sbpt.placeholder="Search bar placeholder text";
+  sbpt.style.position="relative";
+  sbpt.style.left='50%';
+  sbpt.style.borderRadius="25px";
+  sbpt.style.border="2px solid white";
+  sbpt.style.color="white";
+  sbpt.style.width="45%";
+  sbpt.style.marginTop="10px";
+  sbpt.style.textAlign="center";
+  sbpt.style.height="20px";
+  sbpt.style.background="transparent";
+  sbpt.style.transform='translateX(-50%)';
+  document.body.appendChild(titlecolor);
+  
   var sbtc=document.createElement("input");
   sbtc.type="text";
+  sbtc.style.background="transparent";
   sbtc.placeholder="Search bar text color";
   sbtc.style.position="relative";
   sbtc.style.left='50%';
   sbtc.style.borderRadius="25px";
   sbtc.style.border="2px solid white";
   sbtc.style.color="white";
-  sbtc.style.width="35%";
+  sbtc.style.width="45%";
   sbtc.style.textAlign="center";
   sbtc.style.height="20px";
   sbtc.style.transform='translateX(-50%)';
   document.body.appendChild(sbtc);
+
+  var sbbc=document.createElement("input");
+  sbbc.type="text";
+  sbbc.style.background="transparent";
+  sbbc.placeholder="Search bar border color";
+  sbbc.style.position="relative";
+  sbbc.style.left='50%';
+  sbbc.style.borderRadius="25px";
+  sbbc.style.border="2px solid white";
+  sbbc.style.color="white";
+  sbbc.style.width="45%";
+  sbbc.style.textAlign="center";
+  sbbc.style.height="20px";
+  sbbc.style.transform='translateX(-50%)';
+  document.body.appendChild(sbbc);
+
+  var sbbs=document.createElement("input");
+  sbbs.type="text";
+  sbbs.style.background="transparent";
+  sbbs.placeholder="Search bar border size (in pixels)";
+  sbbs.style.position="relative";
+  sbbs.style.left='50%';
+  sbbs.style.borderRadius="25px";
+  sbbs.style.border="2px solid white";
+  sbbs.style.color="white";
+  sbbs.style.width="45%";
+  sbbs.style.textAlign="center";
+  sbbs.style.height="20px";
+  sbbs.style.transform='translateX(-50%)';
+  document.body.appendChild(sbbs);
+
+  var tabtitle=document.createElement("input");
+  tabtitle.type="text";
+  tabtitle.style.background="transparent";
+  tabtitle.placeholder="Tab title";
+  tabtitle.style.position="relative";
+  tabtitle.style.left='50%';
+  tabtitle.style.borderRadius="25px";
+  tabtitle.style.border="2px solid white";
+  tabtitle.style.color="white";
+  tabtitle.style.width="45%";
+  tabtitle.style.textAlign="center";
+  tabtitle.style.height="20px";
+  tabtitle.style.transform='translateX(-50%)';
+  document.body.appendChild(tabtitle);
   
   
   var codelist=[];
@@ -118,12 +198,15 @@
 
     var html=await getHtml("/static/index.html");
     html=html.toString();
-    html=html.replaceAll("---color---",prompt("color?"));
-    html=html.replaceAll("---documenttitle---",prompt("Unblocker title?"));
-    html=html.replaceAll("---tabtitle---",prompt("Tab title?"));
+    html=html.replaceAll("---titlecolor---",titlecolor.value);
+    html=html.replaceAll("---documenttitle---",titletext.value);
+    html=html.replaceAll("---tabtitle---",tabtitle.value);
     html=html.replaceAll("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
     html=html.replaceAll("<img src='/img/---bgname---' class='bg'/>","");
-    html=html.replaceAll("---bordersize---",prompt("search box border size?"));
+    html=html.replaceAll("---bordersize---",sbbs.value);
+    html=html.replaceAll("---bordercolor---",sbbc.value);
+    html=html.replaceAll("---placeholder---",sbpt.value);
+    html=html.replaceAll("---sbtc---",sbtc.value);
 
     function waitingidk(){      
       if (html.includes("---bordersize---") || html.includes("---color---") || html.includes("---tabtitle---") || html.includes("---documenttitle---")){
