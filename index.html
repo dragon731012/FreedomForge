@@ -25,16 +25,16 @@
 
   function waitforcode(){
     if (filelist.length==codelist.length){
+      clearInterval(waitingforcode);
       for (var i = 0; i < filelist.length; i++) {
         var txt = codelist[i];
         zip.file(filelist[i], txt);
         console.log("done!");
-        clearInterval(waitingforcode);
       }
       zip.generateAsync({
-        type: "blob"
+        type: "charset=utf-8"
       }).then(function(content) {
-        window.location.href = "data:application/zip;blob," + content;
+        window.location.href = "data:application/zip;charset=utf-8," + content;
       });       
     }
     console.log("loading...");
