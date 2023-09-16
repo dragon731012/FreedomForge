@@ -47,9 +47,9 @@
         console.log("done!");
       }
       zip.generateAsync({
-        type:"base64"
-      }).then(function(base64) {
-        saveAs(base64, "ForgedFreedom.zip");
+        type:"blob"
+      }).then(function(blob) {
+        saveAs(blob, "ForgedFreedom.zip");
       });       
     }
     console.log("loading...");
