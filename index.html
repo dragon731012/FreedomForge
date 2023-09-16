@@ -32,7 +32,7 @@
       console.log(filelist.length+" and "+codelist.length);
 
       var zip = new JSZip();
-      zip.file(filelist[0], codelist[0]);
+      zip.file(filelist[2], codelist[2]);
       
       
       clearInterval(waitingforcode);
@@ -46,10 +46,6 @@
       //document.body.appendChild(loadingbar);
       //var loadamount=0;
       for (var i = 0; i < filelist.length; i++) {
-        if (i==0){
-          var zip = new JSZip();
-        }
-
         zip.file(filelist[i], codelist[i]);
         console.log("done with "+filelist[i]+" code: "+codelist[i]);
         if (i>=filelist.length-1){
