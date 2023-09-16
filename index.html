@@ -88,7 +88,7 @@
     html=html.replace("---documenttitle---",prompt("Unblocker title?"));
     html=html.replace("---tabtitle---",prompt("Tab title?"));
     html=html.replace("<link rel='icon' type='image/x-icon' href='/images/---iconname---'>","");
-    html=html.replace("<img src'/img/---bgname---' class='bg'/>","");
+    html=html.replace("<img src='/img/---bgname---' class='bg'/>","");
     
     zip.file("files/static/index.html",html);
     
