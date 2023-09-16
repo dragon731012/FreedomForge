@@ -15,7 +15,7 @@
   var namelist=[];
   function getHtml(file){
     return new Promise((resolve) => {
-      fetch("/files"+file)
+      fetch("files"+file)
         .then((response) => {
           return response.text();
         })
