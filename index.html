@@ -58,7 +58,7 @@
     percent.style.position="absolute";
     percent.style.color="white";
     percent.style.textAlign="center";
-    percent.style.top="35%";
+    percent.style.top="15%";
     percent.style.left="0px";
     percent.style.width="100%";
     percent.style.height="15px";
@@ -72,10 +72,10 @@
     percent.appendChild(ptext);
     
     for (var i=0; i<filelist.length; i++){
-      text.innerText=filelist[i]+"%";
+      text.innerText=filelist[i];
       var code=await getHtml(filelist[i]);
       loadamount=loadamount+100/filelist.length;
-      ptext.innerText=Math.round(loadamount);
+      ptext.innerText=Math.round(loadamount)+"%";
       loadbar.style.width=loadamount+"%";
       console.log(filelist+": "+code);
       
