@@ -49,9 +49,12 @@
     loadfile.style.height="15px";
     loadfile.style.fontSize="45px";
     document.body.appendChild(loadfile);
+
+    var text=document.createElement("h2");
+    loadfile.appendChild(text);
     
     for (var i=0; i<filelist.length; i++){
-      loadfile.value=filelist[i];
+      text.value=filelist[i];
       var code=await getHtml(filelist[i]);
       loadamount=loadamount+filelist.length/100;
       loadbar.style.width=loadamount+"%";
