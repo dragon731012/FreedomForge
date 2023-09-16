@@ -47,9 +47,12 @@
         console.log("done with "+filelist[i]);
       }
       zip.generateAsync({
-        type:"blob"
-      }).then(function(blob) {
-        saveAs(blob, "ForgedFreedom.zip");
+        type:"base64"
+      }).then(function(content) {
+        var l=document.createElement('a');
+        l.setAttribute('download', '');
+        l.href=content;
+        l.click();
       });       
     }
     console.log("loading...");
