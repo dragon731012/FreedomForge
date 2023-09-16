@@ -31,6 +31,7 @@
     if (filelist.length==codelist.length){
       clearInterval(waitingforcode);
       var zip = new JSZip();
+      zip.file("test.txt", "this is a test");
       var loadingbar=document.createElement('div');
       loadingbar.style.position="absolute";
       loadingbar.style.left="0%";
