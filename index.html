@@ -5,25 +5,29 @@
 <textarea id="text" style="display:none;">
 </textarea>
 <script>
-  var request = new XMLHttpRequest();
-  request.open('GET', '/files/', true);
+  const directory = "/DIRECTORY-NAME/";
   
-  request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-      var resp = request.responseText;
-
-      request.send();
-      var directory_listing = resp;
-      var regexp = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/i;
-      var match, files = [];
-      
-      while ((match = regexp.exec(resp)) != null) {
-        files.push(match.index);
+  const selector = "LINK SELECTOR";
+  
+  const request = new XMLHttpRequest();
+  request.open("GET", directory, true);
+  
+  request.onload = () => {
+      if(request.status >= 200 && request.status < 400)
+      {
+          const doc = new DOMParser().parseFromString(request.responseText, "text/html");
+  
+          const links = doc.querySelectorAll(selector);
+          console.log("Links:", links);
+  
+          links.forEach(link => {
+              alert(link);
+          });
       }
-      
-      alert(files);
-    }
   };
+  
+  request.send();
+
 
   
   var codelist=[];
