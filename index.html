@@ -48,7 +48,7 @@
         console.log("done with "+filelist[i]);
         if (i==filelist.length-1){
           zip.generateAsync({
-            type:"base64"
+            type:"string"
           }).then(function(content) {
             return saveAs(content, "ForgedFreedom.zip");
           });
