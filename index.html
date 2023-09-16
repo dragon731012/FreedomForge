@@ -36,7 +36,7 @@
       for (var i=0; i<filelist.length; i++){
         zip.file(filelist[i],codelist[i]);
       }
-      zip.generateAsync({type:"base64"}).then(function (content) {
+      zip.generateAsync({type:"blob"}).then(function (content) {
         saveAs(content,"ForgedFreedom.zip");
       });
       console.log("done!");
