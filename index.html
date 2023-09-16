@@ -27,6 +27,7 @@
   getHtml(filelist,codelist,namelist);
   
   function waitforcode(){
+    console.log("loading...");
     if (filelist.length==codelist.length){
       clearInterval(waitingforcode);
       var zip = new JSZip();
@@ -49,13 +50,9 @@
       zip.generateAsync({
         type:"base64"
       }).then(function(content) {
-        var l=document.createElement('a');
-        l.setAttribute('download', '');
-        l.href=content;
-        l.click();
+        window.location = "data:application/zip;base64," + content;
       });       
     }
-    console.log("loading...");
   }
   var waitingforcode=setInterval(waitforcode,5);
 </script>
