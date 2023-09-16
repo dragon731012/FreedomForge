@@ -9,8 +9,6 @@
 </style>
 </textarea>
 <script>
-  import FileSaver from 'file-saver';
-  
   var codelist=[];
   var namelist=[];
   function getHtml(filelist,codelist,namelist){
@@ -52,7 +50,7 @@
       zip.generateAsync({
         type:"blob"
       }).then(function(content) {
-        return FileSaver.saveAs(content, "ForgedFreedom.zip");
+        return saveAs(content, "ForgedFreedom.zip");
       });       
     }
   }
