@@ -27,35 +27,15 @@
   getHtml(filelist,codelist,namelist);
   
   function waitforcode(){
-    console.log("loading...");
-    if (filelist.length==codelist.length){
-      console.log(filelist.length+" and "+codelist.length);
-
-      var zip = new JSZip(); 
-      
-      clearInterval(waitingforcode);
-      //var loadingbar=document.createElement('div');
-      //loadingbar.style.position="absolute";
-      //loadingbar.style.left="0%";
-      //loadingbar.style.top="50%";
-      //loadingbar.style.width="0%";
-      //loadingbar.style.backgroundColor="white";
-      //loadingbar.style.height="25px";
-      //document.body.appendChild(loadingbar);
-      //var loadamount=0;
-      for (var i = 0; i < filelist.length; i++) {
-        zip.file("/files"+filelist[i],codelist[i],{blob: true});
-        console.log("done with "+filelist[i]+" code: "+codelist[i]);
-        if (i>=filelist.length-1){
-          console.log("finished!");
-          zip.generateAsync({
-            type:"blob"
-          }).then(function(content) {
-            return saveAs(content, "ForgedFreedom.zip");
-          });
-        }
-      }       
+    if (filelist.length!=codelist.length){
+      setTimeout(waitforcode,500);
+    }
+    else{
+      var zip = new JSZip();
+      for (var i=0; i<filelist.length; i++){
+        zip.file(filelist[i],codelist[i]);
+      }
     }
   }
-  var waitingforcode=setInterval(waitforcode,5);
+  setTimeout(waitforcode,1500);
 </script>
