@@ -199,6 +199,7 @@
 
   
   async function previewcode(){
+    hs("hide");
     var html=await getHtml("/static/index.html");
     html=html.toString();
     html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value);
@@ -218,7 +219,6 @@
     frame.style.top="0px";
     frame.style.width="100%";
     frame.style.height="100%";
-    hs("hide");
     document.body.appendChild(frame);
   }
   
