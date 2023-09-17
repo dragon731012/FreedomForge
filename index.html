@@ -224,6 +224,7 @@
     frame.style.top="0px";
     frame.style.width="100%";
     frame.style.height="100%";
+    frame.scrolling="no";
     document.body.appendChild(frame);
 
     var x = document.createElement('img');
@@ -236,7 +237,9 @@
     x.style.right = "1%";
     x.style.top = "1%";
     x.onclick = function() {
+      frame.remove();
       hs("show");
+      x.remove();
     };
     document.body.appendChild(x);
 
