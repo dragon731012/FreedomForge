@@ -22,21 +22,23 @@
 </body>
 <script>
   var fontsize=2560/screen.width*6;
+
+  var titlecolorl=document.createElement("label");
+  titlecolorl.for="titlecolor";
+  titlecolorl.style.color="white";
   
   var titlecolor=document.createElement("input");
-  titlecolor.type="text";
-  titlecolor.placeholder="Title color";
+  titlecolor.type="color";
+  titlecolor.name="titlecolor";
   titlecolor.id="titlecolor";
   titlecolor.style.position="relative";
   titlecolor.style.left='50%';
   titlecolor.style.borderRadius="25px";
   titlecolor.style.border="2px solid white";
-  titlecolor.style.color="white";
-  titlecolor.style.width="45%";
+  titlecolor.style.width="10%";
+  titlecolor.value="white";
   titlecolor.style.textAlign="center";
-  titlecolor.style.fontSize=fontsize+"px";
   titlecolor.style.height="6%";
-  titlecolor.style.background="transparent";
   titlecolor.style.transform='translateX(-50%)';
   document.body.appendChild(titlecolor);
 
