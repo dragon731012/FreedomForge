@@ -184,8 +184,11 @@
     if (hideorshow=="hide"){
       const elems=document.getElementsByTagName("*");
       for (const elem of elems) {
-        elem.style.pointerEvents="none";
-        elem.style.opacity="0";
+        if (elem.tagName!="body"){
+          alert(elem.tagName);
+          elem.style.pointerEvents="none";
+          elem.style.opacity="0";
+        }
       }
     }
     if (hideorshow=="show"){
