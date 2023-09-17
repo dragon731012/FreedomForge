@@ -162,6 +162,60 @@
   tabtitle.style.transform='translateX(-50%)';
   document.body.appendChild(tabtitle);
 
+  var tabinput=document.createElement("input");
+  tabinput.style.display="none";
+  tabinput.type="file";
+  tabinput.onchange="tabinputchange()";
+  tabinput.id="tabinput";
+  document.body.appendChild(tabimg);
+  
+  var tabimg=document.createElement("button");
+  tabimg.id="tabimg";
+  tabimg.style.background="transparent";
+  tabimg.style.cursor="pointer";
+  tabimg.style.position="relative";
+  tabimg.style.fontSize=fontsize+"px";
+  tabimg.style.left='50%';
+  tabimg.style.borderRadius="25px";
+  tabimg.style.border="2px solid white";
+  tabimg.style.color="white";
+  tabimg.style.width="25%";
+  tabimg.style.textAlign="center";
+  tabimg.style.height="10%";
+  tabimg.innerText="Upload a tab icon";
+  tabimg.style.transform='translateX(-50%)';
+  document.body.appendChild(tabimg);
+  document.getElementById('tabimg').addEventListener('click', () => { 
+    document.getElementById('tabinput').click();
+  });
+
+  var bginput=document.createElement("input");
+  bginput.style.display="none";
+  bginput.type="file";
+  bginput.onchange="bginputchange()";
+  bginput.id="bginput";
+  document.body.appendChild(bginput);
+  
+  var bgimg=document.createElement("button");
+  bgimg.id="bgimg";
+  bgimg.style.background="transparent";
+  bgimg.style.cursor="pointer";
+  bgimg.style.position="relative";
+  bgimg.style.fontSize=fontsize+"px";
+  bgimg.style.left='50%';
+  bgimg.style.borderRadius="25px";
+  bgimg.style.border="2px solid white";
+  bgimg.style.color="white";
+  bgimg.style.width="25%";
+  bgimg.style.textAlign="center";
+  bgimg.style.height="10%";
+  bgimg.innerText="Upload a background image";
+  bgimg.style.transform='translateX(-50%)';
+  document.body.appendChild(bgimg);
+  document.getElementById('bgimg').addEventListener('click', () => { 
+    document.getElementById('bginput').click();
+  });
+
   var preview=document.createElement("button");
   preview.style.background="transparent";
   preview.style.position="absolute";
@@ -229,6 +283,13 @@
     }
   }
 
+  function bginputchange(){
+    bgimg.innerText=document.getElementById("bginput").files[0].name;
+  }
+
+  function tabinputchange(){
+    tabimg.innerText=document.getElementById("tabinput").files[0].name;
+  }
   
   async function previewcode(){
     hs("hide");
