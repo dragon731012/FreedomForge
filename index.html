@@ -229,11 +229,21 @@
     document.getElementById('bginput').click();
   });
 
+  var cont=document.createElement("div");
+  cont.style.position="absolute";
+  cont.style.left='0px';
+  cont.style.border="none";
+  cont.style.width="100%";
+  cont.style.textAlign="center";
+  cont.style.height="6%";
+  cont.style.background="transparent";
+  document.body.appendChild(cont);
+  
   var preview=document.createElement("button");
   preview.style.background="transparent";
-  preview.style.position="absolute";
-  preview.style.left='40%';
   preview.id="preview";
+  preview.style.height="100%";
+  preview.style.width="15%";
   preview.style.fontSize=fontsize+"px";
   preview.style.borderRadius="25px";
   preview.style.bottom="0px";
@@ -242,14 +252,15 @@
   preview.innerText="preview";
   preview.style.color="white";
   preview.style.textAlign="center";
-  document.body.appendChild(preview);
+  cont.appendChild(preview);
 
   var done=document.createElement("button");
   done.style.background="transparent";
-  done.style.position="absolute";
   done.style.right='40%';
   done.style.fontSize=fontsize+"px";
   done.id="done";
+  done.style.height="100%";
+  done.style.width="15%";
   done.style.borderRadius="25px";
   done.style.bottom="0px";
   done.addEventListener("click", waitforcode);
@@ -257,7 +268,7 @@
   done.innerText="done!";
   done.style.color="white";
   done.style.textAlign="center";
-  document.body.appendChild(done);
+  cont.appendChild(done);
   
   var codelist=[];
   var namelist=[];
