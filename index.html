@@ -295,6 +295,35 @@
       }
     }
   }
+
+  function imgsload(){
+    if (document.getElementById("bgimg").innerText!="Upload a background image"){
+      var reader = new FileReader();
+      reader.addEventListener(
+        "load",
+        () => {
+          html=html.replaceAll("---bg---",reader.result);
+        },
+        false,
+      );
+      reader.readAsDataURL(document.getElementById("bginput").files[0]);
+    }
+    if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
+      var reader1 = new FileReader();
+      reader1.addEventListener(
+        "load",
+        () => {
+          html=html.replaceAll("---icon---",reader1.result);
+        },
+        false,
+      );
+      reader1.readAsDataURL(document.getElementById("tabinput").files[0]);
+    }
+  }
+  
+  async function imgs(){
+    await imgsload();
+  }
   
   async function previewcode(){
     hs("hide");
@@ -308,30 +337,7 @@
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     
-    if (document.getElementById("bgimg").innerText!="Upload a background image"){
-      var reader = new FileReader();
-      reader.addEventListener(
-        "load",
-        () => {
-          html=html.replaceAll("---bg---",reader.result);
-          alert(html);
-        },
-        false,
-      );
-      reader.readAsDataURL(document.getElementById("bginput").files[0]);
-    }
-    if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
-      var reader = new FileReader();
-      reader.addEventListener(
-        "load",
-        () => {
-          html=html.replaceAll("---icon---",reader.result);
-          alert(html);
-        },
-        false,
-      );
-      reader.readAsDataURL(document.getElementById("tabinput").files[0]);
-    }
+    imgs();
     
     var frame=document.createElement("iframe");
     frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
