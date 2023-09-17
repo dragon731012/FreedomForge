@@ -298,36 +298,29 @@
 
   function imgs1(html){
     return new Promise((resolve) => {
-      if (document.getElementById("bgimg").innerText!="Upload a background image"){
-        var reader = new FileReader();
-        reader.addEventListener(
-          "load",
-          () => {
-            html=html.replaceAll("---bg---",reader.result);
-            resolve(html);
-          },
-          false,
-        );
-        reader.readAsDataURL(document.getElementById("bginput").files[0]);
-      }
-      resolve(html);
+      var reader = new FileReader();
+      reader.addEventListener(
+        "load",
+        () => {
+          resolve(html.replaceAll("---icon---",reader1.result));
+        },
+        false,
+      );
+      reader.readAsDataURL(document.getElementById("bginput").files[0]);
     });
   }
 
   function imgs2(html){
     return new Promise((resolve) => {
-      if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
-        var reader1 = new FileReader();
-        reader1.addEventListener(
-          "load",
-          () => {
-            html=html.replaceAll("---icon---",reader1.result);
-            resolve(html);
-          },
-          false,
-        );
-        reader1.readAsDataURL(document.getElementById("tabinput").files[0]);
-      }
+      var reader1 = new FileReader();
+      reader1.addEventListener(
+        "load",
+        () => {
+          resolve(html.replaceAll("---icon---",reader1.result));
+        },
+        false,
+      );
+      reader1.readAsDataURL(document.getElementById("tabinput").files[0]);
     });
   }
   
