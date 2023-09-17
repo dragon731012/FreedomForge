@@ -131,11 +131,25 @@
   tabtitle.style.transform='translateX(-50%)';
   document.body.appendChild(tabtitle);
 
+  var preview=document.createElement("button");
+  preview.style.background="transparent";
+  preview.style.position="absolute";
+  preview.style.left='48%';
+  preview.id="preview";
+  preview.style.borderRadius="25px";
+  preview.style.bottom="0px";
+  preview.addEventListener("click", previewcode);
+  preview.style.border="2px solid white";
+  preview.innerText="preview";
+  preview.style.color="white";
+  preview.style.textAlign="center";
+  preview.style.transform='translateX(-50%)';
+  document.body.appendChild(preview);
 
   var done=document.createElement("button");
   done.style.background="transparent";
   done.style.position="absolute";
-  done.style.left='50%';
+  done.style.right='48%';
   done.id="done";
   done.style.borderRadius="25px";
   done.style.bottom="0px";
