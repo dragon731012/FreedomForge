@@ -338,36 +338,38 @@
     
     html=await imgs1(html);
     html=await imgs2(html);
-    
-    var frame=document.createElement("iframe");
-    frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
-    frame.style.position="absolute";
-    frame.style.overflow="hidden";
-    frame.style.left="0px";
-    frame.style.opacity="1";
-    frame.style.top="0px";
-    frame.style.border="none";
-    frame.style.width="100%";
-    frame.style.height="100%";
-    frame.scrolling="no";
-    document.body.appendChild(frame);
 
-    var x = document.createElement('img');
-    x.style.cursor="pointer";
-    x.style.position = "absolute";
-    x.style.width = "50px";
-    x.style.height = "50px";
-    x.src = "/imgs/x.png";
-    x.style.zIndex = "99999999999999999999";
-    x.style.right = "1%";
-    x.style.top = "1%";
-    x.onclick = function() {
-      frame.remove();
-      hs("show");
-      x.remove();
-    };
-    document.body.appendChild(x);
-
+    function waitingidkidkidk(){
+      var frame=document.createElement("iframe");
+      frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
+      frame.style.position="absolute";
+      frame.style.overflow="hidden";
+      frame.style.left="0px";
+      frame.style.opacity="1";
+      frame.style.top="0px";
+      frame.style.border="none";
+      frame.style.width="100%";
+      frame.style.height="100%";
+      frame.scrolling="no";
+      document.body.appendChild(frame);
+  
+      var x = document.createElement('img');
+      x.style.cursor="pointer";
+      x.style.position = "absolute";
+      x.style.width = "50px";
+      x.style.height = "50px";
+      x.src = "/imgs/x.png";
+      x.style.zIndex = "99999999999999999999";
+      x.style.right = "1%";
+      x.style.top = "1%";
+      x.onclick = function() {
+        frame.remove();
+        hs("show");
+        x.remove();
+      };
+      document.body.appendChild(x);
+    }
+    setTimeout(waitingidkidkidk,200);
   }
   
   async function waitforcode(){
@@ -439,11 +441,11 @@
 
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       zip.file("files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
-      html=html.replaceAll("---bg---","/files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""));
+      html=html.replaceAll("---bg---","/img/"+bginput.value.replace("C:\\fakepath\\", ""));
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       zip.file("files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
-      html=html.replaceAll("---icon---","/files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""));
+      html=html.replaceAll("---icon---","/img/"+tabinput.value.replace("C:\\fakepath\\", ""));
     }
     
     console.log(html);
