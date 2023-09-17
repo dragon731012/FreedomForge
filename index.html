@@ -311,11 +311,11 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
-      let url = document.getElementById("bginput").files.item(0).getAsDataURL();
+      let url = document.getElementById("bginput").files[0].getAsDataURL();
       html=html.replaceAll("---bg---",url);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
-      let url = document.getElementById("tabinput").files.item(0).getAsDataURL();
+      let url = document.getElementById("tabinput").files[0].getAsDataURL();
       html=html.replaceAll("---icon---",url);
     }
     
