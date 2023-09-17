@@ -4,6 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
   body{
+    overflow:hidden;
     background-color:black;
     display:flex;
     flex-direction: column;
@@ -190,6 +191,7 @@
     var frame=document.createElement("iframe");
     frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
     frame.style.position="absolute";
+    frame.style.overflow="hidden";
     frame.style.left="0px";
     frame.style.top="0px";
     frame.style.width="100%";
