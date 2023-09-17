@@ -193,7 +193,7 @@
     if (hideorshow=="show"){
       const elems=document.getElementsByTagName("*");
       for (const elem of elems) {
-        if (elem.tagName!="BODY" && elem.tagName!="HEAD" %% elem.tagName!="HTML"){
+        if (elem.tagName!="BODY" && elem.tagName!="HEAD" && elem.tagName!="HTML"){
           elem.style.pointerEvents="auto";
           elem.style.opacity="1";
         }
