@@ -190,7 +190,7 @@
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     var frame=document.createElement("iframe");
-    frame.src=html;
+    frame.innerHTML=html;
     frame.style.position="absolute";
     frame.style.left="0px";
     frame.style.top="0px";
