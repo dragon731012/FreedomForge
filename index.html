@@ -128,6 +128,23 @@
   sbbs.style.transform='translateX(-50%)';
   document.body.appendChild(sbbs);
 
+  var sbbac=document.createElement("input");
+  sbbac.type="text";
+  sbbac.id="sbbac";
+  sbbac.style.background="transparent";
+  sbbac.placeholder="Search bar background color (put transparent if none)";
+  sbbac.style.position="relative";
+  sbbac.style.left='50%';
+  sbbac.style.fontSize=fontsize+"px";
+  sbbac.style.borderRadius="25px";
+  sbbac.style.border="2px solid white";
+  sbbac.style.color="white";
+  sbbac.style.width="45%";
+  sbbac.style.textAlign="center";
+  sbbac.style.height="10%";
+  sbbac.style.transform='translateX(-50%)';
+  document.body.appendChild(sbbac);
+
   var tabtitle=document.createElement("input");
   tabtitle.type="text";
   tabtitle.id="tabtitle";
@@ -324,6 +341,7 @@
     html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value);
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
+    html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value);
 
     console.log(html);
 
