@@ -193,8 +193,10 @@
     if (hideorshow=="show"){
       const elems=document.getElementsByTagName("*");
       for (const elem of elems) {
-        elem.style.pointerEvents="auto";
-        elem.style.opacity="1";
+        if (elem.tagName!="BODY" && elem.tagName!="HEAD" %% elem.tagName!="HTML"){
+          elem.style.pointerEvents="auto";
+          elem.style.opacity="1";
+        }
       }
     }
   }
@@ -223,6 +225,21 @@
     frame.style.width="100%";
     frame.style.height="100%";
     document.body.appendChild(frame);
+
+    var x = document.createElement('img');
+    x.style.cursor="pointer";
+    x.style.position = "absolute";
+    x.style.width = "50px";
+    x.style.height = "50px";
+    x.src = "/imgs/x.png";
+    x.style.zIndex = "99999999999999999999";
+    x.style.right = "1%";
+    x.style.top = "1%";
+    x.onclick = function() {
+      hs("show");
+    };
+    document.body.appendChild(x);
+
   }
   
   async function waitforcode(){
