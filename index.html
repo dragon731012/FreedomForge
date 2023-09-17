@@ -21,6 +21,8 @@
   
 </body>
 <script>
+  var fontsize=2560/screen.width*7.5;
+  
   var titlecolor=document.createElement("input");
   titlecolor.type="text";
   titlecolor.placeholder="Title color";
@@ -33,6 +35,7 @@
   titlecolor.style.width="45%";
   titlecolor.style.marginTop="10px";
   titlecolor.style.textAlign="center";
+  titlecolor.style.fontSize=fontsize+"px";
   titlecolor.style.height="10%";
   titlecolor.style.background="transparent";
   titlecolor.style.transform='translateX(-50%)';
@@ -44,6 +47,7 @@
   titletext.placeholder="Title text";
   titletext.style.position="relative";
   titletext.style.left='50%';
+  titletext.style.fontSize=fontsize+"px";
   titletext.style.borderRadius="25px";
   titletext.style.border="2px solid white";
   titletext.style.color="white";
@@ -62,6 +66,7 @@
   sbpt.style.left='50%';
   sbpt.style.borderRadius="25px";
   sbpt.id="sbpt";
+  sbpt.style.fontSize=fontsize+"px";
   sbpt.style.border="2px solid white";
   sbpt.style.color="white";
   sbpt.style.width="45%";
@@ -79,6 +84,7 @@
   sbtc.placeholder="Search bar text color";
   sbtc.style.position="relative";
   sbtc.style.left='50%';
+  sbtc.style.fontSize=fontsize+"px";
   sbtc.style.borderRadius="25px";
   sbtc.style.border="2px solid white";
   sbtc.style.color="white";
@@ -95,6 +101,7 @@
   sbbc.placeholder="Search bar border color";
   sbbc.style.position="relative";
   sbbc.style.left='50%';
+  sbbc.style.fontSize=fontsize+"px";
   sbbc.style.borderRadius="25px";
   sbbc.style.border="2px solid white";
   sbbc.style.color="white";
@@ -111,6 +118,7 @@
   sbbs.placeholder="Search bar border size (in pixels)";
   sbbs.style.position="relative";
   sbbs.style.left='50%';
+  sbbs.style.fontSize=fontsize+"px";
   sbbs.style.borderRadius="25px";
   sbbs.style.border="2px solid white";
   sbbs.style.color="white";
@@ -126,6 +134,7 @@
   tabtitle.style.background="transparent";
   tabtitle.placeholder="Tab title";
   tabtitle.style.position="relative";
+  tabtitle.style.fontSize=fontsize+"px";
   tabtitle.style.left='50%';
   tabtitle.style.borderRadius="25px";
   tabtitle.style.border="2px solid white";
@@ -141,6 +150,7 @@
   preview.style.position="absolute";
   preview.style.left='40%';
   preview.id="preview";
+  preview.style.fontSize=fontsize+"px";
   preview.style.borderRadius="25px";
   preview.style.bottom="0px";
   preview.addEventListener("click", previewcode);
@@ -154,6 +164,7 @@
   done.style.background="transparent";
   done.style.position="absolute";
   done.style.right='40%';
+  done.style.fontSize=fontsize+"px";
   done.id="done";
   done.style.borderRadius="25px";
   done.style.bottom="0px";
