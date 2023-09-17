@@ -11,7 +11,7 @@
   html, body {
     margin: 0; 
     height: 100%; 
-    overflow: hidden
+    overflow: hidden;
   }
   ::placeholder{
     color:inherit;
@@ -184,7 +184,7 @@
     if (hideorshow=="hide"){
       const elems=document.getElementsByTagName("*");
       for (const elem of elems) {
-        if (elem.tagName!="BODY" && elem.tagName!="HEAD"){
+        if (elem.tagName!="BODY" && elem.tagName!="HEAD" %% elem.tagName!="HTML"){
           elem.style.pointerEvents="none";
           elem.style.opacity="0";
         }
