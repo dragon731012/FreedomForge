@@ -311,11 +311,11 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
-      let url = window.URL.createObjectURL(document.getElementById("bginput").files[0]);
+      let url = URL.createObjectURL(document.getElementById("bginput").files[0]);
       html=html.replaceAll("---bg---",url);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
-      let url = window.URL.createObjectURL(document.getElementById("tabinput").files[0]);
+      let url = URL.createObjectURL(document.getElementById("tabinput").files[0]);
       html=html.replaceAll("---icon---",url);
     }
     
@@ -419,6 +419,15 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value);
 
+    if (document.getElementById("bgimg").innerText!="Upload a background image"){
+      zip.file("files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
+      html=html.replaceAll("---bg---","files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""));
+    }
+    if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
+      zip.file("files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
+      html=html.replaceAll("---icon---","files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""));
+    }
+    
     console.log(html);
 
     zip.file("files/static/index.html",html);
