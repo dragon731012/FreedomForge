@@ -446,14 +446,14 @@
 
     var html=await getHtml("/static/index.html");
     html=html.toString();
-    html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value);
-    html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value);
-    html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value);
-    html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value);
-    html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value);
-    html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
-    html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
-    html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value);
+    html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
+    html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
+    html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value.toString());
+    html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value.toString());
+    html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value.toString());
+    html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value.toString());
+    html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
+    html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
 
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       zip.file("files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
