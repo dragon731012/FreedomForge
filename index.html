@@ -296,7 +296,7 @@
     }
   }
 
-  function imgsload(){
+  function imgsload(html){
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       var reader = new FileReader();
       reader.addEventListener(
@@ -321,8 +321,8 @@
     }
   }
   
-  async function imgs(){
-    await imgsload();
+  async function imgs(html){
+    await imgsload(html);
   }
   
   async function previewcode(){
@@ -337,7 +337,7 @@
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
     
-    imgs();
+    imgs(html);
     
     var frame=document.createElement("iframe");
     frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
