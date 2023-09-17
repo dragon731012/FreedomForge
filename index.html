@@ -33,7 +33,6 @@
   titlecolor.style.border="2px solid white";
   titlecolor.style.color="white";
   titlecolor.style.width="45%";
-  titlecolor.style.marginTop="10px";
   titlecolor.style.textAlign="center";
   titlecolor.style.fontSize=fontsize+"px";
   titlecolor.style.height="6%";
@@ -52,7 +51,6 @@
   titletext.style.border="2px solid white";
   titletext.style.color="white";
   titletext.style.width="45%";
-  titletext.style.marginTop="10px";
   titletext.style.textAlign="center";
   titletext.style.height="6%";
   titletext.style.background="transparent";
@@ -70,7 +68,6 @@
   sbpt.style.border="2px solid white";
   sbpt.style.color="white";
   sbpt.style.width="45%";
-  sbpt.style.marginTop="10px";
   sbpt.style.textAlign="center";
   sbpt.style.height="6%";
   sbpt.style.background="transparent";
@@ -165,13 +162,13 @@
   var tabinput=document.createElement("input");
   tabinput.style.display="none";
   tabinput.type="file";
-  tabinput.onchange = function() {
+  bginput.onchange = function() {
     let input = this.files[0];
     let text;
     if (input) {
-      text = bginput.value.replace("C: \\fakepath\\", "");
+      text = tabinput.value.replace("C:\fakepath\", "");
     }
-    bgimg.innerHTML = text;
+    tabimg.innerHTML = text;
   };
   tabinput.id="tabinput";
   document.body.appendChild(tabinput);
@@ -203,7 +200,7 @@
     let input = this.files[0];
     let text;
     if (input) {
-      text = bginput.value.replace("C: \\fakepath\\", "");
+      text = bginput.value.replace("C:\fakepath\", "");
     }
     bgimg.innerHTML = text;
   };
