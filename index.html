@@ -184,7 +184,7 @@
     if (hideorshow=="hide"){
       const elems=document.getElementsByTagName("*");
       for (const elem of elems) {
-        if (elem.tagName!="body"){
+        if (elem.tagName!="BODY" && elem.tagName!="HEAD"){
           alert(elem.tagName);
           elem.style.pointerEvents="none";
           elem.style.opacity="0";
