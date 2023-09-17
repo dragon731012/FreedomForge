@@ -343,8 +343,8 @@
     hs("hide");
     var html=await getHtml("/static/index.html");
     html=html.toString();
-    html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value);
-    html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value);
+    html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
+    html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
     html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value);
     html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value);
     html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value);
