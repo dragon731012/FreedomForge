@@ -315,26 +315,22 @@
       reader.addEventListener(
         "load",
         () => {
-          var url = reader.result;
+          html=html.replaceAll("---bg---",reader.result);
         },
         false,
       );
       reader.readAsDataURL(document.getElementById("bginput").files[0]);
-      
-      html=html.replaceAll("---bg---",url);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var reader = new FileReader();
       reader.addEventListener(
         "load",
         () => {
-          var url = reader.result;
+          html=html.replaceAll("---icon---",reader.result);
         },
         false,
       );
       reader.readAsDataURL(document.getElementById("tabinput").files[0]);
-      
-      html=html.replaceAll("---icon---",url);
     }
     
     var frame=document.createElement("iframe");
