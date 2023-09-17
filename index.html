@@ -165,7 +165,14 @@
   var tabinput=document.createElement("input");
   tabinput.style.display="none";
   tabinput.type="file";
-  tabinput.onchange="tabinputchange()";
+  tabinput.onchange = function() {
+    let input = this.files[0];
+    let text;
+    if (input) {
+      text = bginput.value.replace("C: \\fakepath\\", "");
+    }
+    bgimg.innerHTML = text;
+  };
   tabinput.id="tabinput";
   document.body.appendChild(tabinput);
   
@@ -192,7 +199,14 @@
   var bginput=document.createElement("input");
   bginput.style.display="none";
   bginput.type="file";
-  bginput.onchange="bginputchange()";
+  bginput.onchange = function() {
+    let input = this.files[0];
+    let text;
+    if (input) {
+      text = bginput.value.replace("C: \\fakepath\\", "");
+    }
+    bgimg.innerHTML = text;
+  };
   bginput.id="bginput";
   document.body.appendChild(bginput);
   
