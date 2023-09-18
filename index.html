@@ -311,13 +311,13 @@
     }
   }
 
-  function imgs1(html){
+  function imgs1(){
     return new Promise((resolve) => {
       var reader = new FileReader();
       reader.addEventListener(
         "load",
         () => {
-          resolve(html.replaceAll("---bg---",reader.result));
+          resolve(reader.result);
         },
         false,
       );
@@ -325,13 +325,13 @@
     });
   }
 
-  function imgs2(html){
+  function imgs2(){
     return new Promise((resolve) => {
       var reader1 = new FileReader();
       reader1.addEventListener(
         "load",
         () => {
-          resolve(html.replaceAll("---icon---",reader1.result));
+          resolve(reader1.result);
         },
         false,
       );
@@ -345,15 +345,21 @@
     html=html.toString();
     html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
     html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
-    html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value);
-    html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value);
-    html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value);
-    html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value);
-    html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value);
-    html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value);
-    
-    html=await imgs1(html);
-    html=await imgs2(html);
+    html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value.toString());
+    html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value.toString());
+    html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value.toString());
+    html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value.toString());
+    html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
+    html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
+
+    if (document.getElementById("bgimg").innerText!="Upload a background image"){
+      var img1=await imgs1();
+      html=html.replaceAll("---bg---",img);
+    }
+    if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
+      var img2=await imgs2();
+      html=html.replaceAll("---icon---",img);
+    }
 
     function waitingidkidkidk(){
       var frame=document.createElement("iframe");
