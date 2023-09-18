@@ -352,6 +352,8 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
 
+    alert(html);
+    
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       var img1=await imgs1();
       html=html.replaceAll("---bg---",img1);
@@ -362,7 +364,7 @@
     }
 
     function waitingidkidkidk(){
-      document.innerHTML=document.innerHTML+html;
+      alert(html);
       var frame=document.createElement("iframe");
       frame.src='data:text/html;charset=utf-8,' + encodeURI(html);
       frame.style.position="absolute";
