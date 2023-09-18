@@ -356,11 +356,11 @@
     
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       var img1=await imgs1();
-      html=html.replaceAll("---bg---",img1);
+      html=html.replaceAll("---bg---",img1).replace("#","%23");
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var img2=await imgs2();
-      html=html.replaceAll("---icon---",img2);
+      html=html.replaceAll("---icon---",img2).replace("#","%23");
     }
 
     function waitingidkidkidk(){
