@@ -364,6 +364,7 @@
     function waitingidkidkidk(){
       var frame=document.createElement("iframe");
       frame.src='data:text/html;charset=utf-8,' + encodeURIComponent(html);
+      frame.src=frame.src.replace("%23","#");
       frame.style.position="absolute";
       frame.style.overflow="hidden";
       frame.style.left="0px";
