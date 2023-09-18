@@ -325,6 +325,21 @@
     });
   }
 
+  function hexToRgb(hex) {
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+      return r + r + g + g + b + b;
+    });
+  
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
+
+  
   function imgs2(){
     return new Promise((resolve) => {
       var reader1 = new FileReader();
@@ -354,11 +369,13 @@
     
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       var img1=await imgs1();
-      html=html.replaceAll("---bg---",img1).replace("#","%2523");
+      var img1=hexToRgb(img1);
+      html=html.replaceAll("---bg---","rgb("+img1+")");
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var img2=await imgs2();
-      html=html.replaceAll("---icon---",img2).replace("#","%2523");
+      var img2=hexToRgb(img1);
+      html=html.replaceAll("---bg---","rgb("+img2+")");
     }
 
     function waitingidkidkidk(){
