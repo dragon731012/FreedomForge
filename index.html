@@ -355,7 +355,10 @@
     hs("hide");
     var html=await getHtml("/static/index.html");
     html=html.toString();
-    html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
+
+    var color=hexToRgb(document.getElementById("titlecolor").value.toString());
+    html=html.replaceAll("---titlecolor---","rgb("+color+")");
+    
     html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
     html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value.toString());
     html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value.toString());
@@ -366,19 +369,16 @@
     
     if (document.getElementById("bgimg").innerText!="Upload a background image"){
       var img1=await imgs1();
-      var img1=hexToRgb(img1);
-      html=html.replaceAll("---bg---","rgb("+img1+")");
+      html=html.replaceAll("---bg---",img1);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var img2=await imgs2();
-      var img2=hexToRgb(img2);
-      html=html.replaceAll("---bg---","rgb("+img2+")");
+      html=html.replaceAll("---bg---",img2);
     }
 
     function waitingidkidkidk(){
       var frame=document.createElement("iframe");
       frame.src='data:text/html;charset=utf-8,' + encodeURIComponent(html);
-      frame.src=frame.src.replace("%23","#");
       frame.style.position="absolute";
       frame.style.overflow="hidden";
       frame.style.left="0px";
