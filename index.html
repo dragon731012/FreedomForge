@@ -23,7 +23,9 @@
 <script>
   var fontsize=2560/screen.width*6;
 
-  var titlecolorform=document.createElement("form");
+  var titlecolorform=document.createElement("div");
+  titlecolorform.style.height="6%";
+  titlecolorform.style.width="100%";
   document.body.appendChild(titlecolorform);
   
   var titlecolor=document.createElement("input");
@@ -37,15 +39,16 @@
   titlecolor.style.width="10%";
   titlecolor.value="white";
   titlecolor.style.textAlign="center";
-  titlecolor.style.height="6%";
+  titlecolor.style.height="100%";
   titlecolor.style.transform='translateX(-50%)';
   titlecolorform.appendChild(titlecolor);
 
-  var titlecolorl=document.createElement("label");
+  var titlecolorl=document.createElement("h1");
   titlecolorl.for="titlecolor";
+  titlecolorl.style.fontSize=fontsize+"px";
   titlecolorl.innerText="title color: ";
   titlecolorl.style.color="white";
-  titlecolorl.style.left='40%';
+  titlecolorl.style.left='45%';
   titlecolorl.style.transform='translateX(-50%)';
   titlecolorform.appendChild(titlecolorl);
 
