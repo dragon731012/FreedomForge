@@ -367,7 +367,7 @@
     var html=await getHtml("/static/index.html");
     html=html.toString();
 
-    var color=hexToRgb(document.getElementById("titlecolorform").getElementById("titlecolor").value.toString());
+    var color=hexToRgb(document.getElementById("titlecolor").value.toString());
     html=html.replaceAll("---titlecolor---","rgb("+color+")");
     
     html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
