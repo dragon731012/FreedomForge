@@ -143,7 +143,7 @@
   
   var sbbc=document.createElement("input");
   sbbc.type="color";
-  sbbc.id="titlecolor";
+  sbbc.id="sbbc";
   sbbc.style.borderRadius="25px";
   sbbc.style.border="2px solid white";
   sbbc.style.width="8%";
@@ -171,22 +171,42 @@
   sbbs.style.transform='translateX(-50%)';
   document.body.appendChild(sbbs);
 
+  var sbbacform=document.createElement("div");
+  sbbacform.style.height="6%";
+  sbbacform.style.display="flex";
+  sbbacform.style.textAlign="center";
+  sbbacform.style.verticalAlign="middle";
+  sbbacform.style.alignItems="center";
+  sbbacform.style.position="relative";
+  sbbacform.style.justifyContent="center";
+  sbbacform.style.textAlign="center";
+  sbbacform.style.width="100%";
+  document.body.appendChild(sbbacform);
+
+  var sbbacl=document.createElement("div");
+  sbbacl.style.fontSize=fontsize+"px";
+  sbbacl.style.display="flex";
+  sbbacl.style.height="100%";
+  sbbacl.style.alignItems="center";
+  sbbacl.style.justifyContent="center";
+  sbbacl.style.borderRadius="25px 0px 0px 25px";
+  sbbacl.style.border="2px solid white";
+  sbbacl.innerText="search bar border color: ";
+  sbbacl.style.color="white";
+  sbbcform.appendChild(sbbacl);
+  
   var sbbac=document.createElement("input");
-  sbbac.type="text";
+  sbbac.type="color";
   sbbac.id="sbbac";
-  sbbac.style.background="transparent";
-  sbbac.placeholder="Search bar background color (put transparent if none)";
-  sbbac.style.position="relative";
-  sbbac.style.left='50%';
-  sbbac.style.fontSize=fontsize+"px";
   sbbac.style.borderRadius="25px";
   sbbac.style.border="2px solid white";
-  sbbac.style.color="white";
-  sbbac.style.width="45%";
+  sbbac.style.width="8%";
+  sbbac.style.borderRadius="0px 25px 25px 0px";
+  sbbac.style.display="flex";
+  sbbac.value="white";
   sbbac.style.textAlign="center";
-  sbbac.style.height="6%";
-  sbbac.style.transform='translateX(-50%)';
-  document.body.appendChild(sbbac);
+  sbbac.style.height="100%";
+  sbbacform.appendChild(sbbac);
 
   var tabtitle=document.createElement("input");
   tabtitle.type="text";
