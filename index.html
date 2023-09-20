@@ -100,22 +100,42 @@
   sbpt.style.transform='translateX(-50%)';
   document.body.appendChild(sbpt);
   
+  var sbtcform=document.createElement("div");
+  sbtcform.style.height="6%";
+  sbtcform.style.display="flex";
+  sbtcform.style.textAlign="center";
+  sbtcform.style.verticalAlign="middle";
+  sbtcform.style.alignItems="center";
+  sbtcform.style.position="relative";
+  sbtcform.style.justifyContent="center";
+  sbtcform.style.textAlign="center";
+  sbtcform.style.width="100%";
+  document.body.appendChild(sbtcform);
+
+  var sbtcl=document.createElement("div");
+  sbtcl.style.fontSize=fontsize+"px";
+  sbtcl.style.display="flex";
+  sbtcl.style.height="100%";
+  sbtcl.style.alignItems="center";
+  sbtcl.style.justifyContent="center";
+  sbtcl.style.borderRadius="25px 0px 0px 25px";
+  sbtcl.style.border="2px solid white";
+  sbtcl.innerText="search bar text color: ";
+  sbtcl.style.color="white";
+  sbtcform.appendChild(sbtcl);
+  
   var sbtc=document.createElement("input");
-  sbtc.type="text";
+  sbtc.type="color";
   sbtc.id="sbtc";
-  sbtc.style.background="transparent";
-  sbtc.placeholder="Search bar text color";
-  sbtc.style.position="relative";
-  sbtc.style.left='50%';
-  sbtc.style.fontSize=fontsize+"px";
   sbtc.style.borderRadius="25px";
   sbtc.style.border="2px solid white";
-  sbtc.style.color="white";
-  sbtc.style.width="45%";
+  sbtc.style.width="8%";
+  sbtc.style.borderRadius="0px 25px 25px 0px";
+  sbtc.style.display="flex";
+  sbtc.value="white";
   sbtc.style.textAlign="center";
-  sbtc.style.height="6%";
-  sbtc.style.transform='translateX(-50%)';
-  document.body.appendChild(sbtc);
+  sbtc.style.height="100%";
+  sbtcform.appendChild(sbtc);
 
   var sbbcform=document.createElement("div");
   sbbcform.style.height="6%";
