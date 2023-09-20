@@ -48,6 +48,9 @@
   titlecolorl.style.borderRadius="25px 0px 0px 25px";
   titlecolorl.style.border="2px solid white";
   var content = document.createTextNode("Title color: ");
+  content.style.position="absolute";
+  content.style.top="50%";
+  content.style.transform='translateY(-50%)';
   titlecolorl.appendChild(content);
   titlecolorl.style.color="white";
   titlecolorform.appendChild(titlecolorl);
