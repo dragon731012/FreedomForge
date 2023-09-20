@@ -29,10 +29,18 @@
   titlecolorform.style.alignItems="center";
   titlecolorform.style.position="relative";
   titlecolorform.style.justifyContent="center";
-  titlecolorform.style.backgroundColor="green";
   titlecolorform.style.textAlign="center";
   titlecolorform.style.width="100%";
   document.body.appendChild(titlecolorform);
+
+  var titlecolorl=document.createElement("h1");
+  titlecolorl.style.fontSize=fontsize+"px";
+  titlecolorl.style.display="flex";
+  titlecolor.style.borderRadius="0px 25px 25px 0px";
+  titlecolorl.style.border="2px solid white";
+  titlecolorl.innerText="title color: ";
+  titlecolorl.style.color="white";
+  titlecolorform.appendChild(titlecolorl);
   
   var titlecolor=document.createElement("input");
   titlecolor.type="color";
@@ -45,13 +53,6 @@
   titlecolor.style.textAlign="center";
   titlecolor.style.height="100%";
   titlecolorform.appendChild(titlecolor);
-
-  var titlecolorl=document.createElement("h1");
-  titlecolorl.style.fontSize=fontsize+"px";
-  titlecolorl.style.display="flex";
-  titlecolorl.innerText="title color: ";
-  titlecolorl.style.color="white";
-  titlecolorform.appendChild(titlecolorl);
 
   var titletext=document.createElement("input");
   titletext.type="text";
