@@ -25,6 +25,8 @@
 
   var titlecolorform=document.createElement("div");
   titlecolorform.style.height="6%";
+  titlecolorform.style.position="relative";
+  titlecolorform.style.textAlign="center";
   titlecolorform.style.width="100%";
   document.body.appendChild(titlecolorform);
   
@@ -32,23 +34,18 @@
   titlecolor.type="color";
   titlecolor.name="titlecolor";
   titlecolor.id="titlecolor";
-  titlecolor.style.position="relative";
-  titlecolor.style.left='50%';
   titlecolor.style.borderRadius="25px";
   titlecolor.style.border="2px solid white";
   titlecolor.style.width="10%";
   titlecolor.value="white";
   titlecolor.style.textAlign="center";
   titlecolor.style.height="100%";
-  titlecolor.style.transform='translateX(-50%)';
   titlecolorform.appendChild(titlecolor);
 
   var titlecolorl=document.createElement("h1");
   titlecolorl.style.fontSize=fontsize+"px";
   titlecolorl.innerText="title color: ";
   titlecolorl.style.color="white";
-  titlecolorl.style.left='45%';
-  titlecolorl.style.transform='translateX(-50%)';
   titlecolorform.appendChild(titlecolorl);
 
   var titletext=document.createElement("input");
