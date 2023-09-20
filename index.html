@@ -58,7 +58,7 @@
   titlecolor.id="titlecolor";
   titlecolor.style.borderRadius="25px";
   titlecolor.style.border="2px solid white";
-  titlecolor.style.width="5%";
+  titlecolor.style.width="8%";
   titlecolor.style.borderRadius="0px 25px 25px 0px";
   titlecolor.style.display="flex";
   titlecolor.value="white";
@@ -117,22 +117,42 @@
   sbtc.style.transform='translateX(-50%)';
   document.body.appendChild(sbtc);
 
+  var sbbcform=document.createElement("div");
+  sbbcform.style.height="6%";
+  sbbcform.style.display="flex";
+  sbbcform.style.textAlign="center";
+  sbbcform.style.verticalAlign="middle";
+  sbbcform.style.alignItems="center";
+  sbbcform.style.position="relative";
+  sbbcform.style.justifyContent="center";
+  sbbcform.style.textAlign="center";
+  sbbcform.style.width="100%";
+  document.body.appendChild(titlecolorform);
+
+  var sbbcl=document.createElement("div");
+  sbbcl.style.fontSize=fontsize+"px";
+  sbbcl.style.display="flex";
+  sbbcl.style.height="100%";
+  sbbcl.style.alignItems="center";
+  sbbcl.style.justifyContent="center";
+  sbbcl.style.borderRadius="25px 0px 0px 25px";
+  sbbcl.style.border="2px solid white";
+  sbbcl.innerText="search bar border color: ";
+  sbbcl.style.color="white";
+  sbbcform.appendChild(sbbcl);
+  
   var sbbc=document.createElement("input");
-  sbbc.type="text";
-  sbbc.id="sbbc";
-  sbbc.style.background="transparent";
-  sbbc.placeholder="Search bar border color";
-  sbbc.style.position="relative";
-  sbbc.style.left='50%';
-  sbbc.style.fontSize=fontsize+"px";
+  sbbc.type="color";
+  sbbc.id="titlecolor";
   sbbc.style.borderRadius="25px";
   sbbc.style.border="2px solid white";
-  sbbc.style.color="white";
-  sbbc.style.width="45%";
+  sbbc.style.width="8%";
+  sbbc.style.borderRadius="0px 25px 25px 0px";
+  sbbc.style.display="flex";
+  sbbc.value="white";
   sbbc.style.textAlign="center";
-  sbbc.style.height="6%";
-  sbbc.style.transform='translateX(-50%)';
-  document.body.appendChild(sbbc);
+  sbbc.style.height="100%";
+  sbbcform.appendChild(sbbc);
 
   var sbbs=document.createElement("input");
   sbbs.type="text";
