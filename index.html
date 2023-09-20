@@ -21,6 +21,11 @@
   
 </body>
 <script>
+  window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+  }
+  
   var fontsize=2560/screen.width*6;
 
   var titlecolorform=document.createElement("div");
