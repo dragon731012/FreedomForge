@@ -22,11 +22,6 @@
 </body>
 <script>
   var fontsize=2560/screen.width*6;
-
-  var titlecolorl=document.createElement("label");
-  titlecolorl.for="titlecolor";
-  titlecolorl.style.color="white";
-  document.body.appendChild(titlecolorl);
   
   var titlecolor=document.createElement("input");
   titlecolor.type="color";
@@ -42,6 +37,11 @@
   titlecolor.style.height="6%";
   titlecolor.style.transform='translateX(-50%)';
   document.body.appendChild(titlecolor);
+
+  var titlecolorl=document.createElement("label");
+  titlecolorl.for="titlecolor";
+  titlecolorl.style.color="white";
+  document.body.appendChild(titlecolorl);
 
   var titletext=document.createElement("input");
   titletext.type="text";
