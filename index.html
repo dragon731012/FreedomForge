@@ -47,7 +47,8 @@
   titlecolorl.style.textAlign="center";
   titlecolorl.style.borderRadius="25px 0px 0px 25px";
   titlecolorl.style.border="2px solid white";
-  titlecolorl.innerText="title color: ";
+  var content = document.createTextNode("Title color: ");
+  titlecolorl.appendChild(content);
   titlecolorl.style.color="white";
   titlecolorform.appendChild(titlecolorl);
   
