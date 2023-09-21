@@ -200,24 +200,34 @@
   sbbsl.innerText="search bar border size: ";
   sbbsl.style.color="white";
   sbbsform.appendChild(sbbsl);
-  
+
+  var sbbsd=document.createElement("div");
+  sbbsd.style.background="transparent";
+  sbbsd.style.color="white";
+  sbbsd.style.border="2px solid white";
+  sbbsd.style.width="20%";
+  sbbsd.style.borderRadius="0px 25px 25px 0px";
+  sbbsd.style.display="flex";
+  sbbsd.value="white";
+  sbbsd.style.textAlign="center";
+  sbbsd.style.height="100%";
+  sbbsform.appendChild(sbbsd);
+    
   var sbbs=document.createElement("input");
   sbbs.type="range";
   sbbs.min="0";
   sbbs.max="20";
   sbbs.style.outline="none";
-  sbbs.style.background="transparent";
+  sbbs.style.background="white";
   sbbs.style.color="white";
   sbbs.id="sbbs";
-  sbbs.style.borderRadius="25px";
   sbbs.style.border="2px solid white";
-  sbbs.style.width="20%";
-  sbbs.style.borderRadius="0px 25px 25px 0px";
+  sbbs.style.width="100%";
   sbbs.style.display="flex";
   sbbs.value="white";
   sbbs.style.textAlign="center";
-  sbbs.style.height="100%";
-  sbbsform.appendChild(sbbs);
+  sbbs.style.height="15%";
+  sbbsd.appendChild(sbbs);
 
   var sbbacform=document.createElement("div");
   sbbacform.style.height="6%";
