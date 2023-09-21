@@ -131,7 +131,7 @@
   sbpt.style.transform='translateX(-50%)';
   document.body.appendChild(sbpt);
   
-  var sbtcform=document.createElement("div");
+  var sbbcform=document.createElement("div");
   sbtcform.style.height="6%";
   sbtcform.style.display="flex";
   sbtcform.style.textAlign="center";
@@ -154,19 +154,32 @@
   sbtcl.innerText="search bar text color: ";
   sbtcl.style.color="white";
   sbtcform.appendChild(sbtcl);
+
+  var sbbtcd=document.createElement("div");
+  sbbtcd.style.background="transparent";
+  sbbtcd.style.color="white";
+  sbbtcd.style.border="2px solid white";
+  sbbtcd.style.width="8%";
+  sbbtcd.style.borderRadius="0px 25px 25px 0px";
+  sbbtcd.style.display="flex";
+  sbbtcd.style.overflow="hidden";
+  sbbtcd.style.alignItems="center";
+  sbbtcd.style.justifyContent="center";
+  sbbtcd.value="white";
+  sbbtcd.style.textAlign="center";
+  sbbtcd.style.height="100%";
+  sbtcform.appendChild(sbbtcd);
   
-  var sbtc=document.createElement("input");
+  var sbbc=document.createElement("input");
   sbtc.type="color";
   sbtc.id="sbtc";
-  sbtc.style.borderRadius="25px";
-  sbtc.style.border="2px solid white";
-  sbtc.style.width="8%";
-  sbtc.style.borderRadius="0px 25px 25px 0px";
+  sbtc.style.width="100%";
+  sbtc.style.height="100%";
   sbtc.style.display="flex";
   sbtc.value="white";
   sbtc.style.textAlign="center";
-  sbtc.style.height="100%";
-  sbtcform.appendChild(sbtc);
+  sbtc.style.height="80%";
+  sbbtcd.appendChild(sbtc);
 
   var sbbcform=document.createElement("div");
   sbbcform.style.height="6%";
@@ -407,6 +420,8 @@
   cont.style.height="6%";
   cont.style.background="transparent";
   document.body.appendChild(cont);
+
+  //buttons
   
   var preview=document.createElement("button");
   preview.style.background="transparent";
