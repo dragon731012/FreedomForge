@@ -164,19 +164,31 @@
   sbbcl.innerText="search bar border color: ";
   sbbcl.style.color="white";
   sbbcform.appendChild(sbbcl);
+
+  var sbbcd=document.createElement("div");
+  sbbcd.style.background="transparent";
+  sbbcd.style.color="white";
+  sbbcd.style.border="2px solid white";
+  sbbcd.style.width="8%";
+  sbbcd.style.borderRadius="0px 25px 25px 0px";
+  sbbcd.style.display="flex";
+  sbbcd.style.alignItems="center";
+  sbbcd.style.justifyContent="center";
+  sbbcd.value="white";
+  sbbcd.style.textAlign="center";
+  sbbcd.style.height="100%";
+  sbbsform.appendChild(sbbcd);
   
   var sbbc=document.createElement("input");
   sbbc.type="color";
   sbbc.id="sbbc";
   sbbc.style.borderRadius="25px";
-  sbbc.style.border="2px solid white";
-  sbbc.style.width="8%";
-  sbbc.style.borderRadius="0px 25px 25px 0px";
+  sbbc.style.width="7%";
   sbbc.style.display="flex";
   sbbc.value="white";
   sbbc.style.textAlign="center";
-  sbbc.style.height="100%";
-  sbbcform.appendChild(sbbc);
+  sbbc.style.height="80%";
+  sbbcd.appendChild(sbbc);
 
   var sbbsform=document.createElement("div");
   sbbsform.style.height="6%";
