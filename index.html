@@ -7,31 +7,32 @@
     -webkit-appearance: none;
   }
   
-        input[type="color"] {
-            position: relative;
-            width: 15px;
-            height: 15px;
-            border-radius: 0px;
-            padding: 0;
-            border: 0px solid #59edd7;
-            overflow: hidden;
-        }
+  input[type="color"] {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px;
+    padding: 0;
+    color:#3490c9;
+    border: 0px solid #59edd7;
+    overflow: hidden;
+  }
         
-        input[type="color"]::-moz-color-swatch {
-            border: none;
-            border-radius: 0px;
-            overflow: hidden;
-        }
+  input[type="color"]::-moz-color-swatch {
+    border: none;
+    border-radius: 0px;
+    overflow: hidden;
+  }
         
-        input[type="color"]::-webkit-color-swatch-wrapper {
-            padding: 0;
-            border-radius: 0px;
-            overflow: hidden;
-        }
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 0px;
+    overflow: hidden;
+  }
         
-        input[type="color"]::-webkit-color-swatch {
-            border: none;
-        }
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
     
   body{
     background-color:black;
@@ -563,12 +564,28 @@
 
     var color=hexToRgb(document.getElementById("titlecolor").value.toString());
     html=html.replaceAll("---titlecolor---","rgb("+color+")");
-    
+
+    if (document.getElementById("titletext").value.toString()==""){
+      html=html.replaceAll("---documenttitle---","Nothing here yet! remember to fill in everything!");
+    }
     html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
+
+    if (document.getElementById("tabtitle").value.toString()==""){
+      html=html.replaceAll("---tabtitle---","Nothing here yet! remember to fill in everything!");
+    }
     html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value.toString());
+
+    if (document.getElementById("sbbs").value.toString()==""){
+      html=html.replaceAll("---bordersize---","5px");
+    }
     html=html.replaceAll("---bordersize---",document.getElementById("sbbs").value.toString());
     html=html.replaceAll("---bordercolor---",document.getElementById("sbbc").value.toString());
+
+    if (document.getElementById("sbpt").value.toString()==""){
+      html=html.replaceAll("---placeholder---","Nothing here yet! remember to fill in everything!");
+    }
     html=html.replaceAll("---placeholder---",document.getElementById("sbpt").value.toString());
+    
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
     
