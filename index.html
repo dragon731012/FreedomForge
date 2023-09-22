@@ -37,9 +37,6 @@
     
   body{
     background-color:black;
-    display:flex;
-    flex-direction: column;
-    row-gap: 10px;
   }
   html, body {
     margin: 0; 
@@ -61,6 +58,20 @@
   
   var fontsize=2560/screen.width*6;
 
+  var editcont=document.createElement("div");
+  editcont.style.background="transparent";
+  editcont.style.position="absolute";
+  editcont.style.left="0px";
+  editcont.style.top="0px";
+  editcont.style.width="100%";
+  editcont.style.height="100%";
+  editcont.style.display="flex";
+  editcont.style.flexDirection="column";
+  editcont.style.rowGap="10px";
+  editcont.style.overflow="scroll";
+  document.body.appendChild(editcont);
+  
+  
   var titlecolorform=document.createElement("div");
   titlecolorform.style.height="6%";
   titlecolorform.style.display="flex";
@@ -71,7 +82,7 @@
   titlecolorform.style.justifyContent="center";
   titlecolorform.style.textAlign="center";
   titlecolorform.style.width="100%";
-  document.body.appendChild(titlecolorform);
+  editcont.appendChild(titlecolorform);
 
   var titlecolorl=document.createElement("div");
   titlecolorl.style.fontSize=fontsize+"px";
@@ -127,13 +138,13 @@
   titletext.style.height="6%";
   titletext.style.background="transparent";
   titletext.style.transform='translateX(-50%)';
-  document.body.appendChild(titletext);
+  editcont.appendChild(titletext);
 
 
   var hr=document.createElement("hr");
   hr.border="4px solid white";
   hr.style.opacity="0";
-  document.body.appendChild(hr);
+  editcont.appendChild(hr);
   
 
   var sbpt=document.createElement("input");
@@ -151,7 +162,7 @@
   sbpt.style.height="6%";
   sbpt.style.background="transparent";
   sbpt.style.transform='translateX(-50%)';
-  document.body.appendChild(sbpt);
+  editcont.appendChild(sbpt);
   
   var sbtcform=document.createElement("div");
   sbtcform.style.height="6%";
@@ -163,7 +174,7 @@
   sbtcform.style.justifyContent="center";
   sbtcform.style.textAlign="center";
   sbtcform.style.width="100%";
-  document.body.appendChild(sbtcform);
+  editcont.appendChild(sbtcform);
 
   var sbtcl=document.createElement("div");
   sbtcl.style.fontSize=fontsize+"px";
@@ -214,7 +225,7 @@
   sbbcform.style.justifyContent="center";
   sbbcform.style.textAlign="center";
   sbbcform.style.width="100%";
-  document.body.appendChild(sbbcform);
+  editcont.appendChild(sbbcform);
 
   var sbbcl=document.createElement("div");
   sbbcl.style.fontSize=fontsize+"px";
@@ -265,7 +276,7 @@
   sbbsform.style.justifyContent="center";
   sbbsform.style.textAlign="center";
   sbbsform.style.width="100%";
-  document.body.appendChild(sbbsform);
+  editcont.appendChild(sbbsform);
 
   var sbbsl=document.createElement("div");
   sbbsl.style.fontSize=fontsize+"px";
@@ -320,7 +331,7 @@
   sbbacform.style.justifyContent="center";
   sbbacform.style.textAlign="center";
   sbbacform.style.width="100%";
-  document.body.appendChild(sbbacform);
+  editcont.appendChild(sbbacform);
 
   var sbbacl=document.createElement("div");
   sbbacl.style.fontSize=fontsize+"px";
@@ -365,7 +376,7 @@
   var hr2=document.createElement("hr");
   hr2.border="4px solid white";
   hr2.style.opacity="0";
-  document.body.appendChild(hr2);
+  editcont.appendChild(hr2);
   
 
   var tabtitle=document.createElement("input");
@@ -383,13 +394,13 @@
   tabtitle.style.textAlign="center";
   tabtitle.style.height="6%";
   tabtitle.style.transform='translateX(-50%)';
-  document.body.appendChild(tabtitle);
+  editcont.appendChild(tabtitle);
 
 
   var hr3=document.createElement("hr");
   hr3.border="4px solid white";
   hr3.style.opacity="0";
-  document.body.appendChild(hr3);
+  editcont.appendChild(hr3);
 
   
   var tabinput=document.createElement("input");
@@ -405,7 +416,7 @@
     tabimg.innerHTML = text;
   };
   tabinput.id="tabinput";
-  document.body.appendChild(tabinput);
+  editcont.appendChild(tabinput);
   
   var tabimg=document.createElement("button");
   tabimg.id="tabimg";
@@ -440,7 +451,7 @@
   };
   bginput.id="bginput";
   bginput.accept="image/*";
-  document.body.appendChild(bginput);
+  editcont.appendChild(bginput);
   
   var bgimg=document.createElement("button");
   bgimg.id="bgimg";
@@ -471,7 +482,7 @@
   cont.style.textAlign="center";
   cont.style.height="6%";
   cont.style.background="transparent";
-  document.body.appendChild(cont);
+  editcont.appendChild(cont);
 
   //buttons
   
