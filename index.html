@@ -489,9 +489,9 @@
   var preview=document.createElement("button");
   preview.style.background="transparent";
   preview.id="preview";
-  preview.style.height="100%";
+  preview.style.height="10%";
   preview.style.width="15%";
-  preview.style.fontSize=fontsize+"px";
+  preview.style.fontSize=(fontsize-2)+"px";
   preview.style.borderRadius="25px";
   preview.style.bottom="0px";
   preview.addEventListener("click", previewcode);
@@ -504,9 +504,9 @@
   var done=document.createElement("button");
   done.style.background="transparent";
   done.style.right='40%';
-  done.style.fontSize=fontsize+"px";
+  done.style.fontSize=(fontsize-2)+"px";
   done.id="done";
-  done.style.height="100%";
+  done.style.height="10%";
   done.style.width="15%";
   done.style.borderRadius="25px";
   done.style.bottom="0px";
