@@ -492,9 +492,11 @@
   preview.style.background="transparent";
   preview.style.height="100%";
   preview.style.width="15%";
+  preview.addEventListener("click", previewcode);
   preview.style.fontSize=(fontsize-2)+"px";
   preview.style.borderRadius="25px"; 
   preview.style.bottom="0px";
+  preview.innerText="preview";
   preview.style.border="2px solid white"; 
   preview.style.color="white"; 
   preview.style.textAlign="center";
@@ -506,11 +508,13 @@
   done.style.background="transparent";
   done.style.height="100%";
   done.style.width="15%";
+  done.addEventListener("click", waitforcode);
   done.style.fontSize=(fontsize-2)+"px";
   done.style.borderRadius="25px"; 
   done.style.bottom="0px";
   done.style.border="2px solid white"; 
   done.style.color="white"; 
+  done.innerText="done!";
   done.style.textAlign="center";
   done.style.padding="0px";
   cont.appendChild(done);
