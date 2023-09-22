@@ -433,7 +433,7 @@
   tabimg.style.height="6%";
   tabimg.innerText="Upload a tab icon";
   tabimg.style.transform='translateX(-50%)';
-  document.body.appendChild(tabimg);
+  editcont.appendChild(tabimg);
   document.getElementById('tabimg').addEventListener('click', () => { 
     document.getElementById('tabinput').click();
   });
@@ -468,7 +468,7 @@
   bgimg.style.height="6%";
   bgimg.innerText="Upload a background image";
   bgimg.style.transform='translateX(-50%)';
-  document.body.appendChild(bgimg);
+  editcont.appendChild(bgimg);
   document.getElementById('bgimg').addEventListener('click', () => { 
     document.getElementById('bginput').click();
   });
