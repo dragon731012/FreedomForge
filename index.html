@@ -5,7 +5,7 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
-  input[type=range]{
+  input[type=range], input[type=checkbox]{
     -webkit-appearance: none;
   }
   
@@ -83,33 +83,6 @@
   sbbgform.style.width="100%";
   oncont.appendChild(sbbgform);
 
-  var sbbgl=document.createElement("div");
-  sbbgl.style.fontSize=fontsize+"px";
-  sbbgl.style.display="flex";
-  sbbgl.style.height="100%";
-  sbbgl.style.alignItems="center";
-  sbbgl.style.justifyContent="center";
-  sbbgl.style.borderRadius="25px 0px 0px 25px";
-  sbbgl.style.border="2px solid white";
-  sbbgl.innerText="title color: ";
-  sbbgl.style.color="white";
-  sbbgform.appendChild(sbbgl);
-
-  var sbbgd=document.createElement("div");
-  sbbgd.style.background="transparent";
-  sbbgd.style.color="white";
-  sbbgd.style.border="2px solid white";
-  sbbgd.style.width="5%";
-  sbbgd.style.borderRadius="0px 25px 25px 0px";
-  sbbgd.style.display="flex";
-  sbbgd.style.overflow="hidden";
-  sbbgd.style.alignItems="center";
-  sbbgd.style.justifyContent="center";
-  sbbgd.value="#435ccc";
-  sbbgd.style.textAlign="center";
-  sbbgd.style.height="100%";
-  sbbgform.appendChild(sbbgd);
-  
   var sbbg=document.createElement("input");
   sbbg.type="checkbox";
   sbbg.disabled="false";
@@ -121,7 +94,17 @@
   sbbg.value="#435ccc";
   sbbg.style.textAlign="center";
   sbbg.style.height="100%";
-  sbbgd.appendChild(sbbg);
+  sbbgform.appendChild(sbbg);
+  
+  var sbbgl=document.createElement("div");
+  sbbgl.style.fontSize=fontsize+"px";
+  sbbgl.style.display="flex";
+  sbbgl.style.height="100%";
+  sbbgl.style.alignItems="center";
+  sbbgl.style.justifyContent="center";
+  sbbgl.innerText=" - search bar background";
+  sbbgl.style.color="white";
+  sbbgform.appendChild(sbbgl);
   
   
   var editcont=document.createElement("div");
