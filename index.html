@@ -58,6 +58,19 @@
   
   var fontsize=2560/screen.width*6;
 
+  var oncont=document.createElement("div");
+  oncont.style.background="transparent";
+  oncont.style.position="absolute";
+  oncont.style.left="0px";
+  oncont.style.top="0%";
+  oncont.style.width="100%";
+  oncont.style.height="10%";
+  oncont.style.rowGap="10px";
+  oncont.style.overflowY="hidden";
+  oncont.style.overflowX="scroll";
+  document.body.appendChild(oncont);
+  
+  
   var editcont=document.createElement("div");
   editcont.style.background="transparent";
   editcont.style.position="absolute";
