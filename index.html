@@ -62,9 +62,12 @@
   oncont.style.background="transparent";
   oncont.style.position="absolute";
   oncont.style.left="0px";
+  oncont.style.display="flex";
+  oncont.style.flexDirection="column";
   oncont.style.top="0%";
   oncont.style.width="100%";
   oncont.style.height="10%";
+  oncont.style.alignItems="center";
   oncont.style.textAlign="center";
   oncont.style.rowGap="10px";
   oncont.style.overflowY="hidden";
@@ -75,15 +78,15 @@
   sbbg.type="checkbox";
   sbbg.value="true";
   sbbg.id="sbbg";
-  sbbg.style.width="75%";
-  sbbg.style.height="75%";
+  sbbg.style.width="40%";
+  sbbg.style.height="40%";
   sbbg.style.display="block";
   sbbg.style.textAlign="center";
   oncont.appendChild(sbbg);
   
   var sbbgl=document.createElement("div");
   sbbgl.style.fontSize=fontsize+"px";
-  sbbgl.style.display="block";
+  sbbgl.style.display="flex";
   sbbgl.style.height="100%";
   sbbgl.style.alignItems="center";
   sbbgl.style.justifyContent="center";
@@ -97,17 +100,17 @@
   
   var title=document.createElement("input");
   title.type="checkbox";
-  title.style.display="block";
+  title.style.display="flex";
   title.value="true";
   title.id="sbbg";
-  title.style.width="75%";
-  title.style.height="75%";
+  title.style.width="40%";
+  title.style.height="40%";
   title.style.textAlign="center";
   oncont.appendChild(title);
   
   var titlel=document.createElement("div");
   titlel.style.fontSize=fontsize+"px";
-  titlel.style.display="block";
+  titlel.style.display="flex";
   titlel.style.height="100%";
   titlel.style.alignItems="center";
   titlel.style.justifyContent="center";
