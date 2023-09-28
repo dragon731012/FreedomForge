@@ -65,9 +65,6 @@
   oncont.style.top="0%";
   oncont.style.width="100%";
   oncont.style.height="100%";
-  oncont.style.verticalAlign="middle";
-  oncont.style.alignItems="center";
-  oncont.style.justifyContent="center";
   oncont.style.textAlign="center";
   oncont.style.rowGap="10px";
   oncont.style.overflowY="hidden";
@@ -80,13 +77,13 @@
   sbbg.id="sbbg";
   sbbg.style.width="75%";
   sbbg.style.height="75%";
-  sbbg.style.display="flex";
+  sbbg.style.display="block";
   sbbg.style.textAlign="center";
   oncont.appendChild(sbbg);
   
   var sbbgl=document.createElement("div");
   sbbgl.style.fontSize=fontsize+"px";
-  sbbgl.style.display="flex";
+  sbbgl.style.display="block";
   sbbgl.style.height="100%";
   sbbgl.style.alignItems="center";
   sbbgl.style.justifyContent="center";
@@ -100,17 +97,17 @@
   
   var title=document.createElement("input");
   title.type="checkbox";
+  title.style.display="block";
   title.disabled="false";
   title.id="sbbg";
   title.style.width="75%";
   title.style.height="75%";
-  title.style.display="flex";
   title.style.textAlign="center";
   oncont.appendChild(title);
   
   var titlel=document.createElement("div");
   titlel.style.fontSize=fontsize+"px";
-  titlel.style.display="flex";
+  titlel.style.display="block";
   titlel.style.height="100%";
   titlel.style.alignItems="center";
   titlel.style.justifyContent="center";
