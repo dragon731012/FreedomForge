@@ -83,6 +83,14 @@
   sbbg.type="checkbox";
   sbbg.checked="true";
   sbbg.id="sbbg";
+  sbbg.addEventListener("change",() => { 
+    if (document.getElementById("sbbacform").style.display!="none"){
+      document.getElementById("sbbacform").style.display="none";
+    }
+    else{
+      document.getElementById("sbbacform").style.display="flex";
+    }
+  });
   sbbg.style.height="65%";
   sbbg.style.display="flex";
   sbbg.style.textAlign="center";
@@ -103,6 +111,16 @@
   title.type="checkbox";
   title.style.display="flex";
   title.checked="true";
+  title.addEventListener("change",() => { 
+    if (document.getElementById("titlecolorform").style.display!="none"){
+      document.getElementById("titlecolorform").style.display="none";
+      document.getElementById("titletext").style.display="none";
+    }
+    else{
+      document.getElementById("titlecolorform").style.display="flex";
+      document.getElementById("titletext").style.display="flex";
+    }
+  });
   title.id="sbbg";
   title.style.height="65%";
   title.style.textAlign="center";
@@ -139,6 +157,7 @@
   titlecolorform.style.height="6%";
   titlecolorform.style.marginTop="10px";
   titlecolorform.style.display="flex";
+  titlecolorform.id="titlecolorform";
   titlecolorform.style.textAlign="center";
   titlecolorform.style.verticalAlign="middle";
   titlecolorform.style.alignItems="center";
@@ -388,6 +407,7 @@
   var sbbacform=document.createElement("div");
   sbbacform.style.height="6%";
   sbbacform.style.display="flex";
+  sbbacform.id="sbbacform";
   sbbacform.style.textAlign="center";
   sbbacform.style.verticalAlign="middle";
   sbbacform.style.alignItems="center";
