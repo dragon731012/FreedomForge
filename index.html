@@ -106,6 +106,34 @@
   sbbgl.innerText=" - search bar background";
   sbbgl.style.color="white";
   oncont.appendChild(sbbgl);
+
+  var searchplace=document.createElement("input");
+  searchplace.type="checkbox";
+  searchplace.checked="true";
+  searchplace.id="searchplace";
+  searchplace.addEventListener("change",() => { 
+    if (document.getElementById("sbpt").style.display!="none"){
+      document.getElementById("sbpt").style.display="none";
+    }
+    else{
+      document.getElementById("sbpt").style.display="flex";
+    }
+  });
+  searchplace.style.height="65%";
+  searchplace.style.display="flex";
+  searchplace.style.textAlign="center";
+  oncont.appendChild(searchplace);
+  
+  var searchplacel=document.createElement("div");
+  searchplacel.style.fontSize=(fontsize+5)+"px";
+  searchplacel.style.display="flex";
+  searchplacel.style.marginRight="15px";
+  searchplacel.style.height="100%";
+  searchplacel.style.alignItems="center";
+  searchplacel.style.justifyContent="center";
+  searchplacel.innerText=" - search bar placeholder";
+  searchplacel.style.color="white";
+  oncont.appendChild(searchplacel);
   
   var title=document.createElement("input");
   title.type="checkbox";
