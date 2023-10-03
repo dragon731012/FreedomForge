@@ -571,6 +571,7 @@
   tabimg.style.border="2px solid white";
   tabimg.style.color="white";
   tabimg.style.width="25%";
+  tabimg.style.overflow="hidden";
   tabimg.style.textAlign="center";
   tabimg.style.height="6%";
   tabimg.innerText="Upload a tab icon";
@@ -599,6 +600,7 @@
   bgimg.id="bgimg";
   bgimg.style.background="transparent";
   bgimg.style.cursor="pointer";
+  bgimg.style.overflow="hidden";
   bgimg.style.position="relative";
   bgimg.style.fontSize=(fontsize-5)+"px";
   bgimg.style.left='50%';
@@ -627,7 +629,6 @@
   cont.style.background="transparent";
   document.body.appendChild(cont);
 
-  //buttons
   
   var preview=document.createElement("button");
   preview.style.display="inline"; 
