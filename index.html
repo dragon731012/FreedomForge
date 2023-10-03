@@ -202,6 +202,48 @@
   titlel.innerText=" - title";
   titlel.style.color="white";
   oncont.appendChild(titlel);
+
+  var imgorcolor1=document.createElement("div");
+  imgorcolor1.style.fontSize=(fontsize+5)+"px";
+  imgorcolor1.style.display="flex";
+  imgorcolor1.style.marginRight="15px";
+  imgorcolor1.style.height="100%";
+  imgorcolor1.style.alignItems="center";
+  imgorcolor1.style.justifyContent="center";
+  imgorcolor1.innerText="color - ";
+  imgorcolor1.style.color="white";
+  oncont.appendChild(imgorcolor1);
+  
+  var imgorcolor=document.createElement("input");
+  imgorcolor.type="range";
+  imgorcolor.min="0";
+  imgorcolor.max="1";
+  imgorcolor.style.display="flex";
+  imgorcolor.addEventListener("change",() => { 
+    if (document.getElementById("titlecolorform").style.display!="none"){
+      document.getElementById("titlecolorform").style.display="none";
+      document.getElementById("titletext").style.display="none";
+    }
+    else{
+      document.getElementById("titlecolorform").style.display="flex";
+      document.getElementById("titletext").style.display="flex";
+    }
+  });
+  imgorcolor.id="imgorcolor";
+  imgorcolor.style.height="65%";
+  imgorcolor.style.textAlign="center";
+  oncont.appendChild(imgorcolor);
+  
+  var imgorcolorl=document.createElement("div");
+  imgorcolorl.style.fontSize=(fontsize+5)+"px";
+  imgorcolorl.style.display="flex";
+  imgorcolorl.style.marginRight="15px";
+  imgorcolorl.style.height="100%";
+  imgorcolorl.style.alignItems="center";
+  imgorcolorl.style.justifyContent="center";
+  imgorcolorl.innerText=" - image";
+  imgorcolorl.style.color="white";
+  oncont.appendChild(imgorcolorl);
   
   
   var editcont=document.createElement("div");
