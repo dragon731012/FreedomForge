@@ -107,6 +107,36 @@
   sbbgl.style.color="white";
   oncont.appendChild(sbbgl);
 
+  var sbbbe=document.createElement("input");
+  sbbbe.type="checkbox";
+  sbbbe.checked="true";
+  sbbbe.id="sbbbe";
+  sbbbe.addEventListener("change",() => { 
+    if (document.getElementById("sbbsform").style.display!="none"){
+      document.getElementById("sbbsform").style.display="none";
+      document.getElementById("sbbcform").style.display="none";
+    }
+    else{
+      document.getElementById("sbbsform").style.display="flex";
+      document.getElementById("sbbcform").style.display="flex";
+    }
+  });
+  sbbbe.style.height="65%";
+  sbbbe.style.display="flex";
+  sbbbe.style.textAlign="center";
+  oncont.appendChild(sbbbe);
+  
+  var sbbbel=document.createElement("div");
+  sbbbel.style.fontSize=(fontsize+5)+"px";
+  sbbbel.style.display="flex";
+  sbbbel.style.marginRight="15px";
+  sbbbel.style.height="100%";
+  sbbbel.style.alignItems="center";
+  sbbbel.style.justifyContent="center";
+  sbbbel.innerText=" - search bar background";
+  sbbbel.style.color="white";
+  oncont.appendChild(sbbbel);
+
   var searchplace=document.createElement("input");
   searchplace.type="checkbox";
   searchplace.checked="true";
