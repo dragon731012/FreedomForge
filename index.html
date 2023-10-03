@@ -187,7 +187,7 @@
       document.getElementById("titletext").style.display="flex";
     }
   });
-  title.id="sbbg";
+  title.id="title";
   title.style.height="65%";
   title.style.textAlign="center";
   oncont.appendChild(title);
@@ -881,6 +881,19 @@
 
     var html=await getHtml("/static/index.html");
     html=html.toString();
+
+    if (document.getElementById("title").checked!=true){
+      html=html.replaceAll("---documenttitle---"," ");
+    }
+
+    if (document.getElementById("sbbbe").checked!=true){
+      html=html.replaceAll("---bordersize---","0");
+    }
+
+    if (document.getElementById("searchplace").checked!=true){
+      html=html.replaceAll("---placeholder---"," ");
+    }
+    
     html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
     html=html.replaceAll("---documenttitle---",document.getElementById("titletext").value.toString());
     html=html.replaceAll("---tabtitle---",document.getElementById("tabtitle").value.toString());
