@@ -754,6 +754,22 @@
     var html=await getHtml("/static/index.html");
     html=html.toString();
 
+    if (document.getElementById("title").checked!=true){
+      html=html.replaceAll("---documenttitle---"," ");
+    }
+
+    if (document.getElementById("sbbbe").checked!=true){
+      html=html.replaceAll("---bordersize---","0");
+    }
+
+    if (document.getElementById("searchplace").checked!=true){
+      html=html.replaceAll("---placeholder---"," ");
+    }
+
+    if (document.getElementById("sbbg").checked!=true){
+      html=html.replaceAll("---sbbac---"," ");
+    }
+    
     var color=hexToRgb(document.getElementById("titlecolor").value.toString());
     html=html.replaceAll("---titlecolor---","rgb("+color+")");
 
@@ -892,6 +908,10 @@
 
     if (document.getElementById("searchplace").checked!=true){
       html=html.replaceAll("---placeholder---"," ");
+    }
+
+    if (document.getElementById("sbbg").checked!=true){
+      html=html.replaceAll("---sbbac---"," ");
     }
     
     html=html.replaceAll("---titlecolor---",document.getElementById("titlecolor").value.toString());
