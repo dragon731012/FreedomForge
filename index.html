@@ -224,12 +224,13 @@
   imgorcolor.max="1";
   imgorcolor.style.display="flex";
   imgorcolor.addEventListener("change",() => { 
-    if (document.getElementById("titlecolorform").style.display!="none"){
-      document.getElementById("titlecolorform").style.display="none";
+    if (document.getElementById("imgorcolor").value==1){
+      document.getElementById("bgimg").style.display="flex";
+      document.getElementById("bgcolorform").style.display="none";
     }
     else{
-      document.getElementById("titlecolorform").style.display="flex";
-      document.getElementById("titletext").style.display="flex";
+      document.getElementById("bgimg").style.display="none";
+      document.getElementById("bgcolorform").style.display="flex";
     }
   });
   imgorcolor.id="imgorcolor";
@@ -671,6 +672,59 @@
   document.getElementById('bgimg').addEventListener('click', () => { 
     document.getElementById('bginput').click();
   });
+
+  var bgcolorform=document.createElement("div");
+  bgcolorform.style.height="6%";
+  bgcolorform.style.marginTop="10px";
+  bgcolorform.style.display="flex";
+  bgcolorform.id="bgcolorform";
+  bgcolorform.style.textAlign="center";
+  bgcolorform.style.verticalAlign="middle";
+  bgcolorform.style.alignItems="center";
+  bgcolorform.style.position="relative";
+  bgcolorform.style.justifyContent="center";
+  bgcolorform.style.textAlign="center";
+  bgcolorform.style.width="100%";
+  editcont.appendChild(bgcolorform);
+
+  var bgcolorl=document.createElement("div");
+  bgcolorl.style.fontSize=fontsize+"px";
+  bgcolorl.style.display="flex";
+  bgcolorl.style.height="100%";
+  bgcolorl.style.alignItems="center";
+  bgcolorl.style.justifyContent="center";
+  bgcolorl.style.borderRadius="25px 0px 0px 25px";
+  bgcolorl.style.border="2px solid white";
+  bgcolorl.innerText="title color: ";
+  bgcolorl.style.color="white";
+  bgcolorform.appendChild(bgcolorl);
+
+  var bgcolord=document.createElement("div");
+  bgcolord.style.background="transparent";
+  bgcolord.style.color="white";
+  bgcolord.style.border="2px solid white";
+  bgcolord.style.width="8%";
+  bgcolord.style.borderRadius="0px 25px 25px 0px";
+  bgcolord.style.display="flex";
+  bgcolord.style.overflow="hidden";
+  bgcolord.style.alignItems="center";
+  bgcolord.style.justifyContent="center";
+  bgcolord.value="#435ccc";
+  bgcolord.style.textAlign="center";
+  bgcolord.style.height="100%";
+  bgcolorform.appendChild(bgcolord);
+  
+  var bgcolor=document.createElement("input");
+  bgcolor.type="color";
+  bgcolor.id="titlecolor";
+  bgcolor.value="#435ccc";
+  bgcolor.style.width="100%";
+  bgcolor.style.height="100%";
+  bgcolor.style.display="flex";
+  bgcolor.value="#435ccc";
+  bgcolor.style.textAlign="center";
+  bgcolor.style.height="100%";
+  bgcolord.appendChild(bgcolor);
 
   var cont=document.createElement("div");
   cont.style.position="absolute";
