@@ -224,6 +224,14 @@
   imgorcolor.style.width="50px";
   imgorcolor.max="1";
   imgorcolor.style.display="flex";
+  imgorcolor.addEventListener("click",() => { 
+    if (document.getElementById("imgorcolor").value==0){
+      document.getElementById("imgorcolor").value=1;
+    }
+    else{
+      document.getElementById("imgorcolor").value=0;
+    }
+  });
   imgorcolor.addEventListener("change",() => { 
     if (document.getElementById("imgorcolor").value==1){
       document.getElementById("bgimg").style.display="block";
