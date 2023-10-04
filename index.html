@@ -226,12 +226,12 @@
   imgorcolor.style.display="flex";
   imgorcolor.addEventListener("change",() => { 
     if (document.getElementById("imgorcolor").value==1){
-      document.getElementById("bgimg").style.display="flex";
+      document.getElementById("bgimg").style.display="block";
       document.getElementById("bgcolorform").style.display="none";
     }
     else{
       document.getElementById("bgimg").style.display="none";
-      document.getElementById("bgcolorform").style.display="block";
+      document.getElementById("bgcolorform").style.display="flex";
     }
   });
   imgorcolor.id="imgorcolor";
