@@ -213,19 +213,9 @@
   imgorcolor1.innerText="background color - ";
   imgorcolor1.style.color="white";
   oncont.appendChild(imgorcolor1);
-  
-  var imgorcolor=document.createElement("input");
-  imgorcolor.type="range";
-  imgorcolor.pointerEvents="none";
-  imgorcolor.style.borderRadius="10px";
-  imgorcolor.style.outline="none";
-  imgorcolor.style.background="white";
-  imgorcolor.style.color="white";
-  imgorcolor.min="0";
-  imgorcolor.style.width="50px";
-  imgorcolor.max="1";
-  imgorcolor.style.display="flex";
-  imgorcolor.addEventListener("click",() => { 
+
+  var alink=document.createElement("a");
+  alink.addEventListener("click",() => { 
     if (document.getElementById("imgorcolor").value==0){
       document.getElementById("imgorcolor").value=1;
     }
@@ -233,6 +223,20 @@
       document.getElementById("imgorcolor").value=0;
     }
   });
+  oncont.appendChild(alink);
+  
+  var imgorcolor=document.createElement("input");
+  imgorcolor.type="range";
+  imgorcolor.pointerEvents="none";
+  imgorcolor.style.borderRadius="10px";
+  imgorcolor.disabled="true";
+  imgorcolor.style.outline="none";
+  imgorcolor.style.background="white";
+  imgorcolor.style.color="white";
+  imgorcolor.min="0";
+  imgorcolor.style.width="50px";
+  imgorcolor.max="1";
+  imgorcolor.style.display="flex";
   imgorcolor.addEventListener("change",() => { 
     if (document.getElementById("imgorcolor").value==1){
       document.getElementById("bgimg").style.display="block";
@@ -245,7 +249,7 @@
   });
   imgorcolor.id="imgorcolor";
   imgorcolor.style.textAlign="center";
-  oncont.appendChild(imgorcolor);
+  alink.appendChild(imgorcolor);
   
   var imgorcolorl=document.createElement("div");
   imgorcolorl.style.fontSize=fontsize+"px";
