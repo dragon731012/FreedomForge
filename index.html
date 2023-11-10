@@ -210,9 +210,11 @@
   imgorcolor.addEventListener("change",() => { 
     if (document.getElementById("bgimg").style.display!="none"){
       document.getElementById("bgimg").style.display="none";
+      document.getElementById("bgcolorform").style.display="flex";
     }
     else{
       document.getElementById("bgimg").style.display="flex";
+      document.getElementById("bgcolorform").style.display="none";
     }
   });
   imgorcolor.style.height="65%";
