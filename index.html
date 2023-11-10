@@ -203,62 +203,31 @@
   titlel.style.color="white";
   oncont.appendChild(titlel);
 
-  var imgorcolor1=document.createElement("div");
-  imgorcolor1.style.fontSize=fontsize+"px";
-  imgorcolor1.style.display="flex";
-  imgorcolor1.style.marginRight="7px";
-  imgorcolor1.style.height="100%";
-  imgorcolor1.style.alignItems="center";
-  imgorcolor1.style.justifyContent="center";
-  imgorcolor1.innerText="background color - ";
-  imgorcolor1.style.color="white";
-  oncont.appendChild(imgorcolor1);
-
-  var alink=document.createElement("a");
-  alink.addEventListener("click",() => { 
-    if (document.getElementById("imgorcolor").value==0){
-      document.getElementById("imgorcolor").value=1;
-    }
-    else{
-      document.getElementById("imgorcolor").value=0;
-    }
-  });
-  oncont.appendChild(alink);
-  
-  var imgorcolor=document.createElement("input");
-  imgorcolor.type="range";
-  imgorcolor.pointerEvents="none";
-  imgorcolor.style.borderRadius="10px";
-  imgorcolor.style.outline="none";
-  imgorcolor.style.background="white";
-  imgorcolor.style.color="white";
-  imgorcolor.min="0";
-  imgorcolor.style.width="50px";
-  imgorcolor.max="1";
-  imgorcolor.style.display="flex";
-  imgorcolor.addEventListener("change",() => { 
-    if (document.getElementById("imgorcolor").value==1){
-      document.getElementById("bgimg").style.display="block";
-      document.getElementById("bgcolorform").style.display="none";
-    }
-    else{
-      document.getElementById("bgimg").style.display="none";
-      document.getElementById("bgcolorform").style.display="flex";
-    }
-  });
+  var sbbg=document.createElement("input");
+  imgorcolor.type="checkbox";
+  imgorcolor.checked="true";
   imgorcolor.id="imgorcolor";
+  imgorcolor.addEventListener("change",() => { 
+    if (document.getElementById("bgimg").style.display!="none"){
+      document.getElementById("bgimg").style.display="none";
+    }
+    else{
+      document.getElementById("bgimg").style.display="flex";
+    }
+  });
+  imgorcolor.style.height="65%";
+  imgorcolor.style.display="flex";
   imgorcolor.style.textAlign="center";
-  alink.appendChild(imgorcolor);
+  oncont.appendChild(imgorcolor);
   
   var imgorcolorl=document.createElement("div");
   imgorcolorl.style.fontSize=fontsize+"px";
   imgorcolorl.style.display="flex";
-  imgorcolor1.style.marginLeft="7px";
   imgorcolorl.style.marginRight="15px";
   imgorcolorl.style.height="100%";
   imgorcolorl.style.alignItems="center";
   imgorcolorl.style.justifyContent="center";
-  imgorcolorl.innerText=" - background image";
+  imgorcolorl.innerText=" - bacground image";
   imgorcolorl.style.color="white";
   oncont.appendChild(imgorcolorl);
   
