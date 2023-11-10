@@ -880,9 +880,12 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
     
-    if (document.getElementById("bgimg").innerText!="Upload a background image"){
+    if (document.getElementById("bgimg").style.display!="none"){
       var img1=await imgs1();
-      html=html.replaceAll("---bg---",img1);
+      html=html.replaceAll("---bg---","url('"+img1+"');");
+    }
+    else{
+      html=html.replaceAll("---bg---","url('"+document.getElementById("bgcolorform").value+"');");
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var img2=await imgs2();
@@ -1006,9 +1009,12 @@
     html=html.replaceAll("---sbtc---",document.getElementById("sbtc").value.toString());
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
 
-    if (document.getElementById("bgimg").innerText!="Upload a background image"){
+    if (document.getElementById("bgimg").style.display!="none"){
       zip.file("files/static/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
-      html=html.replaceAll("---bg---","/img/"+bginput.value.replace("C:\\fakepath\\", ""));
+      html=html.replaceAll("---bg---","url('"+"/img/"+bginput.value.replace("C:\\fakepath\\", "")+"');");
+    }
+    else{
+      html=html.replaceAll("---bg---","url('"+document.getElementById("bgcolorform").value+"');");
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       zip.file("files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
