@@ -885,7 +885,7 @@
       html=html.replaceAll("---bg---","url('"+img1+"');");
     }
     else{
-      html=html.replaceAll("---bg---","url('"+document.getElementById("bgcolorform").value+"');");
+      html=html.replaceAll("---bg---",document.getElementById("bgcolorform").value);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       var img2=await imgs2();
@@ -1014,7 +1014,7 @@
       html=html.replaceAll("---bg---","url('"+"/img/"+bginput.value.replace("C:\\fakepath\\", "")+"');");
     }
     else{
-      html=html.replaceAll("---bg---","url('"+document.getElementById("bgcolorform").value+"');");
+      html=html.replaceAll("---bg---",document.getElementById("bgcolorform").value);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
       zip.file("files/static/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
