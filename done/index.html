@@ -1,1 +1,18 @@
-<iframe src="https://www.youtube.com/embed/xycaI_uNb2I"></iframe>
+<iframe src="https://www.youtube.com/embed/xycaI_uNb2I?autoplay=1"></iframe>
+<style>
+  iframe{
+    width:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+  }
+</style>
+<script>
+  var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
+  link.type='image/x-icon';
+  link.rel='shortcut icon';
+  link.href="/imgs/freedomforgeicon.png";
+  document.getElementsByTagName('head')[0].appendChild(link);
+  document.title="Freedom Forge";
+</script>
