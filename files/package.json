@@ -3,9 +3,9 @@
     "bare-server-node": "github:tomphttp/bare-server-node",
     "node-static": "^0.7.11"
   },
-  "name": "DM-unblocker",
+  "name": "project",
   "version": "1.4.0",
-  "description": "a web proxy with a backend of uv, made by a 13-year-old.",
+  "description": "a web proxy with a backend of uv, made with freedomforge.",
   "main": "index.js",
   "scripts": {
     "vercel-start": "npm install @vercel/node",
@@ -18,6 +18,6 @@
   "keywords": [
     "proxy"
   ],
-  "author": "dragonmaster73101",
+  "author": "sombody",
   "license": "GPL-3.0-or-later"
 }
