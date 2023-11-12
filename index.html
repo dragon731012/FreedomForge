@@ -1022,7 +1022,7 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
     
     console.log(html);
 
-    zip.file("files/public/index.html",html);
+    zip.file("files/files/public/index.html",html);
         
     zip.generateAsync({type:"blob"}).then(function (content) {
       saveAs(content, "ForgedFreedom.zip");
