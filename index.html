@@ -834,7 +834,7 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
   
   async function previewcode(){
     hs("hide");
-    var html=await getHtml("/public/index.html");
+    var html=await getHtml("/files/public/index.html");
     html=html.toString();
 
     if (document.getElementById("title").checked!=true){
@@ -981,7 +981,7 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
       zip.file("files"+filelist[i].toString(),code.toString());
     }
 
-    var html=await getHtml("/public/index.html");
+    var html=await getHtml("/files/public/index.html");
     html=html.toString();
 
     if (document.getElementById("title").checked!=true){
@@ -1010,20 +1010,20 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
 
     if (document.getElementById("bgimg").style.display!="none"){
-      zip.file("files/public/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
+      zip.file("/files/public/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
       html=html.replaceAll("---bg---","url('"+"/img/"+bginput.value.replace("C:\\fakepath\\", "")+"');");
     }
     else{
       html=html.replaceAll("---bg---",document.getElementById("bgcolor").value);
     }
     if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
-      zip.file("files/public/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
+      zip.file("/files/public/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
       html=html.replaceAll("---icon---","/img/"+tabinput.value.replace("C:\\fakepath\\", ""));
     }
     
     console.log(html);
 
-    zip.file("files/public/index.html",html);
+    zip.file("/files/public/index.html",html);
         
     zip.generateAsync({type:"blob"}).then(function (content) {
       saveAs(content, "ForgedFreedom.zip");
