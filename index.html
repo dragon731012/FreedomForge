@@ -759,7 +759,7 @@
   var namelist=[];
   function getHtml(file){
     return new Promise((resolve) => {
-      fetch("/files"+file)
+      fetch(file)
         .then((response) => {
           return response.text();
         })
@@ -1023,7 +1023,7 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
     
     console.log(html);
 
-    zip.file("/files/public/index.html",html);
+    zip.file("/files/public/index.htfml",html);
         
     zip.generateAsync({type:"blob"}).then(function (content) {
       saveAs(content, "ForgedFreedom.zip");
