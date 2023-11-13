@@ -1028,5 +1028,8 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
       saveAs(content, "ForgedFreedom.zip");
     });
     console.log("done!");
+    setTimeout(() => {
+      window.location.href=window.location.origin+"/done/";
+    },250);
   }
 </script>
