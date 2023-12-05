@@ -1009,13 +1009,15 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
     html=html.replaceAll("---sbbac---",document.getElementById("sbbac").value.toString());
 
     if (document.getElementById("bgimg").style.display!="none"){
-      zip.file("/files/public/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
-      html=html.replaceAll("---bg---","url('"+"/img/"+bginput.value.replace("C:\\fakepath\\", "")+"');");
+      if (document.getElementById("bginput").value!=""){
+        zip.file("/files/public/img/"+bginput.value.replace("C:\\fakepath\\", ""), bginput.files[0], {binary: true});
+        html=html.replaceAll("---bg---","url('"+"/img/"+bginput.value.replace("C:\\fakepath\\", "")+"');");
+      }
     }
     else{
       html=html.replaceAll("---bg---",document.getElementById("bgcolor").value);
     }
-    if (document.getElementById("tabimg").innerText!="Upload a tab icon"){
+    if (document.getElementById("tabinput").value!=""){
       zip.file("/files/public/img/"+tabinput.value.replace("C:\\fakepath\\", ""), tabinput.files[0], {binary: true});
       html=html.replaceAll("---icon---","/img/"+tabinput.value.replace("C:\\fakepath\\", ""));
     }
