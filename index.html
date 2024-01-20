@@ -801,7 +801,9 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
         },
         false,
       );
-      reader.readAsDataURL(document.getElementById("bginput").files[0]);
+      if (document.getElementById("bginput").files[0]!=undefined){
+        reader.readAsDataURL(document.getElementById("bginput").files[0]);
+      }
     });
   }
 
