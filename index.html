@@ -803,6 +803,8 @@ var filelist=["/files/Procfile","/files/README.md","/files/app.json","/files/ind
       );
       if (document.getElementById("bginput").files[0]!=undefined){
         reader.readAsDataURL(document.getElementById("bginput").files[0]);
+      } else {
+        resolve("https://static.vecteezy.com/system/resources/previews/004/141/669/original/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
       }
     });
   }
